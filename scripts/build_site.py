@@ -10,8 +10,10 @@ PUBLIC.mkdir(exist_ok=True)
 # GitHub Pages: prevent Jekyll processing
 (PUBLIC / ".nojekyll").touch()
 
-# Copy background image
+# Copy assets
 shutil.copy(ROOT / "data" / "fifa-world-cup.png", PUBLIC / "background.png")
+if (ROOT / "dixon-coles.png").exists():
+    shutil.copy(ROOT / "dixon-coles.png", PUBLIC / "dixon-coles.png")
 
 # Load logos
 logos = json.loads((ROOT / "data" / "logos.json").read_text())

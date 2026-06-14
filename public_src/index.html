@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>WC 2026 · Match Predictions</title>
   <meta name="description" content="Daily AI-powered FIFA World Cup 2026 match predictions." />
-  <!-- Barlow Condensed = closest free match to the MATCHDAY block condensed style -->
+  <!-- Premium fonts: Bebas Neue (headlines) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <style>
     *,
@@ -43,7 +44,7 @@
     }
 
     body {
-      font-family: 'Barlow', sans-serif;
+      font-family: 'Inter', sans-serif;
       color: var(--text);
       background: #050810;
       min-height: 100vh;
@@ -107,11 +108,11 @@
     }
 
     .hd-title h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.55rem;
-      font-weight: 900;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 400;
       line-height: 1;
-      letter-spacing: .04em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       background: linear-gradient(120deg, #F5C518, #FF8C00);
       -webkit-background-clip: text;
@@ -120,11 +121,12 @@
     }
 
     .hd-title p {
-      font-size: .68rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .62rem;
       color: var(--sub);
-      margin-top: 3px;
-      font-weight: 400;
-      letter-spacing: .08em;
+      margin-top: 4px;
+      font-weight: 500;
+      letter-spacing: .12em;
       text-transform: uppercase
     }
 
@@ -190,25 +192,25 @@
     }
 
     .day-header .day-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .8rem;
-      letter-spacing: .25em;
+      font-family: 'Inter', sans-serif;
+      font-size: .68rem;
+      letter-spacing: .28em;
       text-transform: uppercase;
       color: var(--sub);
       font-weight: 600;
     }
 
     .day-header .day-full {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 900;
-      letter-spacing: .04em;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      font-weight: 400;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      background: linear-gradient(120deg, rgba(255, 255, 255, .95) 40%, rgba(136, 146, 164, .7));
+      background: linear-gradient(120deg, #fff 40%, rgba(136, 146, 164, .7));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-top: 2px;
+      margin-top: 4px;
     }
 
     /* ── MATCH CARD ─────────────────────────────── */
@@ -277,32 +279,33 @@
     }
 
     .team-name-main {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 900;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
       text-align: center;
       text-transform: uppercase;
-      letter-spacing: .06em;
+      letter-spacing: .10em;
       color: #fff;
-      line-height: 1.1;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.6);
+      line-height: 1;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 0.8);
     }
 
     .team-elo {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .72rem;
-      color: rgba(136, 146, 164, .75);
+      font-family: 'Inter', sans-serif;
+      font-size: .6rem;
+      color: rgba(180, 190, 210, .7);
       font-weight: 600;
-      letter-spacing: .06em;
+      letter-spacing: .08em;
+      text-shadow: 0 1px 4px rgba(0,0,0,.9);
     }
 
     .team-badge {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .62rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .58rem;
       padding: 2px 9px;
       border-radius: 20px;
       font-weight: 700;
-      letter-spacing: .06em;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
 
@@ -329,22 +332,22 @@
     }
 
     .vs-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2rem;
-      font-weight: 900;
-      letter-spacing: .05em;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, .5);
+      color: rgba(255, 255, 255, .35);
       line-height: 1;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
     }
 
     .vs-date-chip {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .62rem;
-      letter-spacing: .12em;
+      font-family: 'Inter', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .10em;
       text-transform: uppercase;
-      color: rgba(136, 146, 164, .6);
+      color: rgba(160, 170, 190, .6);
       font-weight: 600;
     }
 
@@ -376,20 +379,20 @@
     }
 
     .odds-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .58rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .55rem;
       text-transform: uppercase;
-      letter-spacing: .10em;
-      color: rgba(136, 146, 164, .65);
+      letter-spacing: .12em;
+      color: rgba(160, 170, 190, .65);
       font-weight: 700;
     }
 
     .odds-pct {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.55rem;
-      font-weight: 900;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 400;
       line-height: 1;
-      letter-spacing: .02em;
+      letter-spacing: .05em;
       text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
     }
 
@@ -462,7 +465,7 @@
       flex-direction: column;
       align-items: center;
       padding: 14px 10px;
-      gap: 4px;
+      gap: 3px;
       border-right: 1px solid rgba(255, 255, 255, .06);
       background: transparent;
       transition: background .18s;
@@ -477,22 +480,22 @@
     }
 
     .fp-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .6rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .55rem;
       text-transform: uppercase;
-      letter-spacing: .10em;
-      color: rgba(136, 146, 164, .65);
+      letter-spacing: .12em;
+      color: rgba(160, 170, 190, .65);
       font-weight: 700;
       text-align: center;
     }
 
     .fp-val {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 900;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 400;
       line-height: 1;
-      letter-spacing: .02em;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+      letter-spacing: .05em;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
     }
 
     .fp-val.c-white {
@@ -552,11 +555,11 @@
     }
 
     .ph-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .65rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .6rem;
       text-transform: uppercase;
-      letter-spacing: .10em;
-      color: rgba(136, 146, 164, .65);
+      letter-spacing: .12em;
+      color: rgba(160, 170, 190, .65);
       font-weight: 700;
     }
 
@@ -575,10 +578,10 @@
     }
 
     .pr-name {
-      font-family: 'Barlow', sans-serif;
-      font-size: .78rem;
-      font-weight: 600;
-      color: rgba(238, 240, 245, .85);
+      font-family: 'Inter', sans-serif;
+      font-size: .75rem;
+      font-weight: 500;
+      color: rgba(238, 240, 245, .88);
       flex: 1;
       min-width: 0;
       overflow: hidden;
@@ -587,13 +590,13 @@
     }
 
     .pr-pos {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .58rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .55rem;
       font-weight: 700;
-      padding: 2px 5px;
+      padding: 2px 6px;
       border-radius: 4px;
       flex-shrink: 0;
-      letter-spacing: .05em;
+      letter-spacing: .06em;
     }
 
     .pos-fw {
@@ -617,14 +620,14 @@
     }
 
     .pr-prob {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .85rem;
-      font-weight: 800;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: .95rem;
+      font-weight: 400;
       color: var(--green);
       flex-shrink: 0;
       min-width: 32px;
       text-align: right;
-      letter-spacing: .02em;
+      letter-spacing: .06em;
     }
 
     /* ── NO MATCHES ─────────────────────────────── */
@@ -660,41 +663,141 @@
       color: rgba(245, 197, 24, .75)
     }
 
-    /* ── ANIMATIONS ──────────────────────────────── */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px)
-      }
+    /* ── MODAL ──────────────────────────────────── */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+    }
 
-      to {
-        opacity: 1;
-        transform: translateY(0)
-      }
+    .modal-content {
+      background: #0d1220;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      color: #fff;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      animation: slideUp 0.3s ease;
+    }
+
+    .modal-content h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+    }
+
+    .modal-content p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: rgba(238, 240, 245, 0.85);
+      margin-bottom: 15px;
+    }
+
+    .modal-img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .close-btn:hover {
+      color: #fff;
+    }
+
+    #btn-about {
+      background: rgba(245, 197, 24, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      padding: 0 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s;
+    }
+
+    #btn-about:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* ── ANIMATIONS ──────────────────────────────── */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(32px) }
+      to   { opacity: 1; transform: translateY(0) }
+    }
+    @keyframes logoPulse {
+      0%, 100% { filter: drop-shadow(0 6px 18px rgba(0,0,0,.8)); }
+      50%       { filter: drop-shadow(0 6px 28px rgba(245,197,24,.55)) drop-shadow(0 0 12px rgba(255,255,255,.15)); }
+    }
+    @keyframes barGrow {
+      from { width: 0 }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    @keyframes countUp {
+      from { opacity: 0; transform: scale(.7); }
+      to   { opacity: 1; transform: scale(1); }
     }
 
     .match-card {
-      animation: fadeUp .4s ease both
+      animation: slideUp .45s cubic-bezier(.22,.68,0,1.2) both;
+    }
+    .match-card:nth-child(1) { animation-delay: .04s }
+    .match-card:nth-child(2) { animation-delay: .12s }
+    .match-card:nth-child(3) { animation-delay: .20s }
+    .match-card:nth-child(4) { animation-delay: .28s }
+    .match-card:nth-child(5) { animation-delay: .36s }
+    .match-card:nth-child(6) { animation-delay: .44s }
+
+    .team-logo {
+      animation: logoPulse 4s ease-in-out infinite;
+    }
+    .match-card:nth-child(even) .team-logo {
+      animation-delay: 2s;
     }
 
-    .match-card:nth-child(1) {
-      animation-delay: .04s
+    .pb-home, .pb-draw, .pb-away {
+      animation: barGrow .8s cubic-bezier(.22,.68,0,1.2) both;
+      animation-delay: .5s;
     }
 
-    .match-card:nth-child(2) {
-      animation-delay: .10s
-    }
-
-    .match-card:nth-child(3) {
-      animation-delay: .16s
-    }
-
-    .match-card:nth-child(4) {
-      animation-delay: .22s
-    }
-
-    .match-card:nth-child(5) {
-      animation-delay: .28s
+    .odds-pct {
+      animation: countUp .5s cubic-bezier(.22,.68,0,1.2) both;
+      animation-delay: .5s;
     }
 
     /* ── RESPONSIVE ──────────────────────────────── */
@@ -709,7 +812,7 @@
       }
 
       .hd-title h1 {
-        font-size: 1.2rem
+        font-size: 1.3rem
       }
 
       .page-body {
@@ -717,7 +820,7 @@
       }
 
       .day-header .day-full {
-        font-size: 1.8rem
+        font-size: 2.2rem
       }
 
       .card-top {
@@ -801,6 +904,7 @@
         </div>
       </div>
       <div class="date-nav">
+        <button id="btn-about">Model Info</button>
         <button class="nav-btn" id="btn-prev">&#8592;</button>
         <select id="date-select"></select>
         <button class="nav-btn" id="btn-next">&#8594;</button>
@@ -825,15 +929,51 @@
     </footer>
   </div>
 
+  <div id="model-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>About the Prediction Model</h2>
+      <p>The predictions on this site are powered by a <strong>Dixon-Coles Poisson model</strong> combined with <strong>Elo ratings</strong>.</p>
+      <img src="dixon-coles.png" alt="Dixon-Coles Model diagram" class="modal-img" onerror="this.style.display='none'" />
+      <p>It calculates Expected Goals (xG) using team attack and defense strengths, then applies a Poisson distribution to predict exact scoreline probabilities. A correlation parameter adjusts for the likelihood of low-scoring draws.</p>
+    </div>
+  </div>
+
   <script src="data.js"></script>
   <script>
     // ── utils ──────────────────────────────────────────────────────
     function pct(v) { return Math.round((v || 0) * 100) + '%' }
     function fmt(v, d = 2) { return Number(v || 0).toFixed(d) }
 
+    // ── alias map: prediction name → logos.json key ─────────────────
+    const LOGO_ALIASES = {
+      'usa':                    'United States',
+      'united states':          'United States',
+      'ivory coast':            "Cote d'Ivoire",
+      "cote d'ivoire":          "Cote d'Ivoire",
+      'cape verde':             'Cabo Verde',
+      'cabo verde':             'Cabo Verde',
+      'dr congo':               'Congo DR',
+      'congo dr':               'Congo DR',
+      'democratic republic of the congo': 'Congo DR',
+      'south korea':            'Korea Republic',
+      'korea republic':         'Korea Republic',
+      'bosnia-herzegovina':     'Bosnia and Herzegovina',
+      'bosnia and herzegovina': 'Bosnia and Herzegovina',
+      'curacao':                'Curacao',
+      'cura\u00e7ao':          'Curacao',
+      'czech republic':         'Czechia',
+      'czechia':                'Czechia',
+    };
+
     function getLogo(name) {
       if (!name) return '';
+      // 1. exact match
       if (LOGOS[name]) return LOGOS[name];
+      // 2. alias lookup (case-insensitive)
+      const aliasKey = LOGO_ALIASES[name.toLowerCase()];
+      if (aliasKey && LOGOS[aliasKey]) return LOGOS[aliasKey];
+      // 3. fuzzy partial match
       const n = name.toLowerCase();
       for (const [k, v] of Object.entries(LOGOS)) {
         const kl = k.toLowerCase();
@@ -996,6 +1136,15 @@
       o.textContent = new Date(d + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
       sel.appendChild(o);
     });
+
+    // ── modal logic ──────────────────────────────────────────────────
+    const modal = document.getElementById('model-modal');
+    const btnAbout = document.getElementById('btn-about');
+    const closeBtn = document.querySelector('.close-btn');
+
+    btnAbout.onclick = () => modal.style.display = 'flex';
+    closeBtn.onclick = () => modal.style.display = 'none';
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
 
     function render(i) {
       idx = Math.max(0, Math.min(dates.length - 1, i));

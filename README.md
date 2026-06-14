@@ -5,6 +5,21 @@ A statistical match prediction system for **FIFA World Cup 2026** (June 11 – J
 Predicts match outcomes, expected goals, scorelines, over/under, and BTTS using a
 **Dixon-Coles Poisson model** + **Elo ratings**, trained on 50k+ historical international matches
 and updated live with WC 2026 results as they come in.
+---
+
+## How the Dixon-Coles Model Works
+
+The prediction engine relies on the **Dixon-Coles Poisson model**, an established statistical framework for predicting football scores.
+
+![Dixon-Coles Model](dixon-coles.png)
+
+At its core, the model calculates two main components for every match:
+1. **Expected Goals (xG)**: It estimates the expected number of goals for the home team ($\mu$) and away team ($\nu$) based on their historical attack and defense strengths, adjusted for the overall global average and venue/host advantage.
+2. **Poisson Distribution**: It uses the Poisson probability distribution to convert these expected goal values into probabilities for every possible exact scoreline (e.g., 1-0, 2-1, 0-0).
+
+Unlike a basic independent Poisson model, Dixon-Coles introduces a **correlation parameter ($\rho$)** to adjust for the fact that low-scoring matches (0-0, 1-0, 0-1, 1-1) occur more frequently in reality than standard Poisson equations predict. 
+
+The engine fits this model to 50,000+ historical international matches, applying a time-decay function (half-life of 180 days) so that recent matches influence the parameters much more than matches from 3–5 years ago.
 
 ---
 
