@@ -1,0 +1,320 @@
+[
+  {
+    "match": {
+      "home_team": "Norway",
+      "away_team": "France",
+      "date": "2026-06-27",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1955.5,
+      "away_elo": 2083.7,
+      "elo_diff": -128.2
+    },
+    "match_outcome": {
+      "home_win": 0.2831,
+      "draw": 0.2824,
+      "away_win": 0.4345
+    },
+    "goals": {
+      "expected_home_goals": 0.996,
+      "expected_away_goals": 1.193,
+      "over_2_5": 0.3742,
+      "under_2_5": 0.6258,
+      "btts": 0.4473
+    },
+    "top_scorelines": [
+      [
+        1,
+        1,
+        0.1412
+      ],
+      [
+        0,
+        1,
+        0.1256
+      ],
+      [
+        0,
+        0,
+        0.1202
+      ],
+      [
+        1,
+        0,
+        0.1035
+      ],
+      [
+        0,
+        2,
+        0.0797
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Senegal",
+      "away_team": "Iraq",
+      "date": "2026-06-27",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1897.2,
+      "away_elo": 1811.4,
+      "elo_diff": 85.8
+    },
+    "match_outcome": {
+      "home_win": 0.4214,
+      "draw": 0.3058,
+      "away_win": 0.2728
+    },
+    "goals": {
+      "expected_home_goals": 1.065,
+      "expected_away_goals": 0.815,
+      "over_2_5": 0.2907,
+      "under_2_5": 0.7093,
+      "btts": 0.3732
+    },
+    "top_scorelines": [
+      [
+        0,
+        0,
+        0.1607
+      ],
+      [
+        1,
+        0,
+        0.1545
+      ],
+      [
+        1,
+        1,
+        0.1405
+      ],
+      [
+        0,
+        1,
+        0.1164
+      ],
+      [
+        2,
+        0,
+        0.0865
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Uruguay",
+      "away_team": "Spain",
+      "date": "2026-06-27",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1931.8,
+      "away_elo": 2156.5,
+      "elo_diff": -224.7
+    },
+    "match_outcome": {
+      "home_win": 0.1875,
+      "draw": 0.2658,
+      "away_win": 0.5467
+    },
+    "goals": {
+      "expected_home_goals": 0.724,
+      "expected_away_goals": 1.348,
+      "over_2_5": 0.343,
+      "under_2_5": 0.657,
+      "btts": 0.389
+    },
+    "top_scorelines": [
+      [
+        0,
+        1,
+        0.1622
+      ],
+      [
+        0,
+        0,
+        0.1333
+      ],
+      [
+        1,
+        1,
+        0.1304
+      ],
+      [
+        0,
+        2,
+        0.1144
+      ],
+      [
+        1,
+        0,
+        0.0837
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Cape Verde",
+      "away_team": "Saudi Arabia",
+      "date": "2026-06-27",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1695.7,
+      "away_elo": 1757.7,
+      "elo_diff": -62.0
+    },
+    "match_outcome": {
+      "home_win": 0.2797,
+      "draw": 0.3002,
+      "away_win": 0.4201
+    },
+    "goals": {
+      "expected_home_goals": 0.861,
+      "expected_away_goals": 1.137,
+      "over_2_5": 0.323,
+      "under_2_5": 0.677,
+      "btts": 0.4003
+    },
+    "top_scorelines": [
+      [
+        0,
+        1,
+        0.1461
+      ],
+      [
+        0,
+        0,
+        0.1436
+      ],
+      [
+        1,
+        1,
+        0.1408
+      ],
+      [
+        1,
+        0,
+        0.1087
+      ],
+      [
+        0,
+        2,
+        0.0876
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Egypt",
+      "away_team": "Iran",
+      "date": "2026-06-27",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1813.0,
+      "away_elo": 1899.4,
+      "elo_diff": -86.4
+    },
+    "match_outcome": {
+      "home_win": 0.3503,
+      "draw": 0.3128,
+      "away_win": 0.3369
+    },
+    "goals": {
+      "expected_home_goals": 0.99,
+      "expected_away_goals": 0.81,
+      "over_2_5": 0.2694,
+      "under_2_5": 0.7306,
+      "btts": 0.3569
+    },
+    "top_scorelines": [
+      [
+        0,
+        0,
+        0.1733
+      ],
+      [
+        1,
+        0,
+        0.1556
+      ],
+      [
+        1,
+        1,
+        0.1406
+      ],
+      [
+        0,
+        1,
+        0.1258
+      ],
+      [
+        2,
+        0,
+        0.081
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "New Zealand",
+      "away_team": "Belgium",
+      "date": "2026-06-27",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1758.6,
+      "away_elo": 1933.3,
+      "elo_diff": -174.6
+    },
+    "match_outcome": {
+      "home_win": 0.213,
+      "draw": 0.2712,
+      "away_win": 0.5158
+    },
+    "goals": {
+      "expected_home_goals": 0.791,
+      "expected_away_goals": 1.338,
+      "over_2_5": 0.358,
+      "under_2_5": 0.642,
+      "btts": 0.4107
+    },
+    "top_scorelines": [
+      [
+        0,
+        1,
+        0.1516
+      ],
+      [
+        1,
+        1,
+        0.1335
+      ],
+      [
+        0,
+        0,
+        0.1267
+      ],
+      [
+        0,
+        2,
+        0.1065
+      ],
+      [
+        1,
+        0,
+        0.0865
+      ]
+    ]
+  }
+]

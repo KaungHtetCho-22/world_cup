@@ -1,0 +1,35 @@
+[project]
+name = "world-cup"
+version = "0.1.0"
+description = "FIFA World Cup 2026 match prediction engine (Dixon-Coles, Elo, XGBoost)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastparquet>=2026.5.0",
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "lightgbm>=4.6.0",
+    "matplotlib>=3.11.0",
+    "numpy>=2.4.6",
+    "pandas>=3.0.3",
+    "pillow>=12.2.0",
+    "scikit-learn>=1.9.0",
+    "scipy>=1.17.1",
+    "statsmodels>=0.14.6",
+    "xgboost>=3.2.0",
+]
+
+[project.scripts]
+wc-predict   = "src.pipeline.predict:_cli"
+wc-train     = "src.pipeline.train:_cli"
+wc-live      = "src.pipeline.live:_cli"
+wc-backtest  = "tests.backtest:main"
+wc-load-data = "src.data.loader:build_matches"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

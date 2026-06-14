@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>WC 2026 · AI Match Predictions</title>
+<meta name="description" content="Daily AI-powered FIFA World Cup 2026 match predictions using Dixon-Coles model and Elo ratings."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#FFD700;--gold2:#FFA500;--green:#00E676;--red:#FF1744;
+  --glass:rgba(255,255,255,0.07);--glass-border:rgba(255,255,255,0.15);
+  --text:#F0F0F0;--sub:#AAB4C8;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;color:var(--text);min-height:100vh;
+  background:#0a0e1a;overflow-x:hidden;
+}
+/* BACKGROUND */
+#bg{
+  position:fixed;inset:0;z-index:0;
+  background:url('background.png') center/cover no-repeat;
+  filter:brightness(0.28) saturate(1.4);
+  transform:scale(1.05);
+}
+#bg-overlay{
+  position:fixed;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(5,8,20,.82) 0%,rgba(5,8,20,.55) 50%,rgba(5,8,20,.9) 100%);
+}
+/* LAYOUT */
+#app{position:relative;z-index:2;min-height:100vh;padding-bottom:60px}
+
+/* HEADER */
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 28px;
+  background:rgba(0,0,0,0.5);
+  border-bottom:1px solid var(--glass-border);
+  backdrop-filter:blur(20px);
+  position:sticky;top:0;z-index:100;
+  gap:12px;flex-wrap:wrap;
+}
+.header-logo{display:flex;align-items:center;gap:14px}
+.header-logo img{width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(255,215,0,.5))}
+.header-title{line-height:1.1}
+.header-title h1{font-size:1.3rem;font-weight:900;background:linear-gradient(135deg,#FFD700,#FFA500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header-title p{font-size:.75rem;color:var(--sub);font-weight:300;letter-spacing:.04em}
+
+/* DATE PICKER */
+.date-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.date-nav button{
+  background:var(--glass);border:1px solid var(--glass-border);color:var(--text);
+  border-radius:8px;padding:7px 12px;cursor:pointer;font-size:.85rem;font-family:'Outfit',sans-serif;
+  transition:all .2s;
+}
+.date-nav button:hover{background:rgba(255,215,0,.15);border-color:var(--gold)}
+#date-select{
+  background:rgba(0,0,0,0.5);border:1px solid var(--glass-border);color:var(--text);
+  border-radius:8px;padding:7px 10px;font-family:'Outfit',sans-serif;font-size:.9rem;
+  cursor:pointer;outline:none;
+}
+#date-select:focus{border-color:var(--gold)}
+option{background:#0a0e1a}
+
+/* HERO DATE LABEL */
+#date-label{
+  text-align:center;padding:28px 16px 8px;
+  font-size:1.05rem;font-weight:600;color:var(--sub);letter-spacing:.06em;text-transform:uppercase;
+}
+#date-label span{color:var(--gold);font-size:1.4rem;display:block;margin-top:4px;font-weight:900}
+
+/* MATCH GRID */
+#matches{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:24px;padding:20px 24px;max-width:1300px;margin:0 auto;
+}
+
+/* MATCH CARD */
+.match-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:20px;overflow:hidden;
+  backdrop-filter:blur(18px);
+  box-shadow:0 8px 32px rgba(0,0,0,.5);
+  transition:transform .25s,box-shadow .25s;
+}
+.match-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.65)}
+
+/* CARD HEADER — pitch strip */
+.card-header{
+  background:linear-gradient(135deg,rgba(0,40,12,.85),rgba(0,80,20,.7));
+  border-bottom:1px solid rgba(255,255,255,.08);
+  padding:14px 16px 10px;
+  position:relative;overflow:hidden;
+}
+.card-header::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='60'%3E%3Crect width='100' height='60' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Ccircle cx='50' cy='30' r='12' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Cline x1='50' y1='0' x2='50' y2='60' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E") center/cover;
+}
+
+/* TEAMS ROW */
+.teams-row{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  position:relative;
+}
+.team{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;min-width:0}
+.team img{
+  width:60px;height:60px;object-fit:contain;
+  filter:drop-shadow(0 4px 12px rgba(0,0,0,.6));
+  transition:transform .3s;
+}
+.match-card:hover .team img{transform:scale(1.08)}
+.team-name{font-size:.78rem;font-weight:600;text-align:center;color:#fff;letter-spacing:.02em;line-height:1.2}
+.vs-block{
+  display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;
+}
+.vs{font-size:1.1rem;font-weight:900;color:var(--gold);letter-spacing:.05em}
+.neutral-badge{
+  font-size:.6rem;background:rgba(255,215,0,.15);color:var(--gold);
+  border:1px solid rgba(255,215,0,.3);border-radius:4px;padding:2px 5px;
+}
+
+/* OUTCOME BAR */
+.outcome-bar{margin:12px 0 4px;display:flex;border-radius:8px;overflow:hidden;height:8px}
+.bar-home{background:linear-gradient(90deg,#2196F3,#42A5F5);transition:width .6s}
+.bar-draw{background:linear-gradient(90deg,#9E9E9E,#BDBDBD);transition:width .6s}
+.bar-away{background:linear-gradient(90deg,#E53935,#EF9A9A);transition:width .6s}
+.outcome-labels{display:flex;justify-content:space-between;font-size:.7rem;color:var(--sub);margin-top:4px}
+.outcome-pct{font-weight:700;font-size:.8rem}
+.home-pct{color:#64B5F6}.draw-pct{color:#9E9E9E}.away-pct{color:#EF9A9A}
+
+/* ELO */
+.elo-row{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.68rem;color:var(--sub);margin-top:2px;
+}
+.elo-val{font-weight:600;color:#80CBC4}
+
+/* CARD BODY */
+.card-body{padding:14px 16px}
+
+/* STATS GRID */
+.stats-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;
+}
+.stat-box{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;padding:8px 10px;text-align:center;
+}
+.stat-label{font-size:.63rem;color:var(--sub);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.stat-val{font-size:.95rem;font-weight:700;color:#fff}
+.stat-val.green{color:var(--green)}.stat-val.amber{color:#FFB74D}.stat-val.red{color:var(--red)}
+
+/* SCORELINES */
+.section-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);margin-bottom:8px;font-weight:600}
+.scorelines{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.scoreline{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;padding:5px 10px;font-size:.78rem;font-weight:600;
+  display:flex;align-items:center;gap:6px;transition:all .2s;cursor:default;
+}
+.scoreline:first-child{background:rgba(255,215,0,.12);border-color:rgba(255,215,0,.3)}
+.sc-score{color:#fff;letter-spacing:.05em}
+.sc-prob{color:var(--gold);font-size:.7rem}
+
+/* PLAYERS SECTION */
+.players-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.players-col{}
+.col-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin-bottom:6px;font-weight:600}
+.player-entry{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:4px 0;border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:.72rem;gap:4px;
+}
+.player-entry:last-child{border:none}
+.player-name{color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.player-pos{color:var(--sub);font-size:.65rem;flex-shrink:0}
+.player-prob{color:var(--green);font-weight:700;flex-shrink:0}
+
+/* EXTRA STATS (cards/corners) */
+.extra-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px}
+.extra-box{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:10px;padding:8px;text-align:center;
+}
+.extra-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:var(--sub)}
+.extra-val{font-size:.85rem;font-weight:700;color:#CE93D8}
+
+/* REASONING */
+.reasoning{
+  margin-top:10px;background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15);
+  border-radius:10px;padding:10px 12px;font-size:.72rem;color:var(--sub);line-height:1.55;
+}
+.reasoning strong{color:var(--gold);display:block;margin-bottom:4px;font-size:.74rem}
+
+/* NO MATCHES */
+#no-matches{
+  text-align:center;padding:80px 20px;color:var(--sub);
+}
+#no-matches h2{font-size:2rem;margin-bottom:8px}
+
+/* FOOTER */
+footer{
+  text-align:center;padding:20px;color:var(--sub);font-size:.72rem;
+  border-top:1px solid var(--glass-border);margin-top:40px;
+}
+footer span{color:var(--gold)}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  header{padding:12px 16px}
+  .header-logo img{width:42px;height:42px}
+  .header-title h1{font-size:1.1rem}
+  #matches{grid-template-columns:1fr;padding:12px}
+  .team img{width:48px;height:48px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.match-card{animation:fadeUp .4s ease both}
+.match-card:nth-child(2){animation-delay:.05s}
+.match-card:nth-child(3){animation-delay:.1s}
+.match-card:nth-child(4){animation-delay:.15s}
+.match-card:nth-child(5){animation-delay:.2s}
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<div id="bg-overlay"></div>
+<div id="app">
+<header>
+  <div class="header-logo">
+    <img id="wc-logo" src="https://assets.football-logos.cc/logos/fifa-world-cup/1500x1500/fifa-world-cup.png" alt="World Cup 2026"
+         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>'"/>
+    <div class="header-title">
+      <h1>WC 2026 Predictions</h1>
+      <p>Dixon-Coles · Elo · AI-powered daily forecasts</p>
+    </div>
+  </div>
+  <div class="date-nav">
+    <button id="btn-prev">&#8592;</button>
+    <select id="date-select"></select>
+    <button id="btn-next">&#8594;</button>
+  </div>
+</header>
+
+<div id="date-label">Matches on <span id="label-date">—</span></div>
+<div id="matches"></div>
+<div id="no-matches" style="display:none">
+  <h2>⚽</h2><p>No predictions available for this date.</p>
+</div>
+
+<footer>
+  Predictions generated by <span>Dixon-Coles + Elo model</span> · Updates daily via GitHub Actions ·
+  <span>FIFA World Cup 2026</span>
+</footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+// ── helpers ──────────────────────────────────────────────────────────────
+function pct(v){return Math.round((v||0)*100)+'%'}
+function fmt(v,d=2){return (+v).toFixed(d)}
+
+function getLogo(name){
+  if(!name) return '';
+  const direct = LOGOS[name];
+  if(direct) return direct;
+  // fuzzy match
+  const n = name.toLowerCase();
+  for(const [k,v] of Object.entries(LOGOS)){
+    if(k.toLowerCase()===n || n.includes(k.toLowerCase()) || k.toLowerCase().includes(n)) return v;
+  }
+  return '';
+}
+
+function colorClass(prob){
+  if(prob>=0.55) return 'green';
+  if(prob>=0.35) return 'amber';
+  return 'red';
+}
+
+function buildReasoning(d){
+  const m=d.match, o=d.match_outcome||{}, g=d.goals||{};
+  const fav = o.home_win>o.away_win ? m.home_team : m.away_team;
+  const favProb = Math.max(o.home_win||0, o.away_win||0);
+  const eloFav = (d.elo?.elo_diff||0)>0 ? m.home_team : m.away_team;
+  const lines=[];
+  lines.push(`<strong>🤖 Model Reasoning</strong>`);
+  lines.push(`<b>${fav}</b> is the favourite at <b>${pct(favProb)}</b> win probability.`);
+  if(Math.abs(d.elo?.elo_diff||0)>100)
+    lines.push(`Elo gap of <b>${Math.abs(d.elo.elo_diff).toFixed(0)} pts</b> favours <b>${eloFav}</b>.`);
+  const xg=((g.expected_home_goals||0)+(g.expected_away_goals||0)).toFixed(2);
+  lines.push(`Expected goals: <b>${fmt(g.expected_home_goals)} – ${fmt(g.expected_away_goals)}</b> (total xG ${xg}).`);
+  if(g.over_2_5>=0.5)
+    lines.push(`Over 2.5 goals is likely at <b>${pct(g.over_2_5)}</b>.`);
+  else
+    lines.push(`Under 2.5 goals favoured at <b>${pct(g.under_2_5)}</b>.`);
+  if(o.draw>=0.3) lines.push(`Draw is a real possibility (<b>${pct(o.draw)}</b>).`);
+  return '<div class="reasoning">'+lines.join(' ')+'</div>';
+}
+
+function buildPlayersSection(d){
+  const ps=d.players_to_score;
+  if(!ps) return '';
+  function col(label,list){
+    if(!list||!list.length) return '';
+    const rows=list.slice(0,3).filter(p=>p.goal_prob>0).map(p=>`
+      <div class="player-entry">
+        <span class="player-name">${p.player}</span>
+        <span class="player-pos">${p.position}</span>
+        <span class="player-prob">${pct(p.goal_prob)}</span>
+      </div>`).join('');
+    if(!rows) return '';
+    return `<div class="players-col"><div class="col-label">${label}</div>${rows}</div>`;
+  }
+  const h=col('🏠 Home Scorers',ps.home);
+  const a=col('✈️ Away Scorers',ps.away);
+  if(!h&&!a) return '';
+  return `<div class="section-title">Players to Score</div><div class="players-row">${h}${a}</div>`;
+}
+
+function buildCard(d){
+  const m=d.match, o=d.match_outcome||{}, g=d.goals||{};
+  const hLogo=getLogo(m.home_team), aLogo=getLogo(m.away_team);
+  const imgH=hLogo?`<img src="${hLogo}" alt="${m.home_team}" onerror="this.style.display='none'"/>`:`<span style="font-size:2rem">⚽</span>`;
+  const imgA=aLogo?`<img src="${aLogo}" alt="${m.away_team}" onerror="this.style.display='none'"/>`:`<span style="font-size:2rem">⚽</span>`;
+
+  // bar widths
+  const hw=pct(o.home_win||0), dw=pct(o.draw||0), aw=pct(o.away_win||0);
+
+  // scorelines
+  const sl=(d.top_scorelines||[]).slice(0,5).map(s=>`
+    <div class="scoreline">
+      <span class="sc-score">${s[0]}–${s[1]}</span>
+      <span class="sc-prob">${pct(s[2])}</span>
+    </div>`).join('');
+
+  // extra stats
+  let extraHtml='';
+  if(d.cards||d.corners){
+    const c=d.cards||{}, cr=d.corners||{};
+    extraHtml=`<div class="section-title">Match Stats</div><div class="extra-stats">`;
+    if(c.expected_total!=null) extraHtml+=`<div class="extra-box"><div class="extra-label">Exp. Cards</div><div class="extra-val">${c.expected_total}</div></div>`;
+    if(c.over!=null) extraHtml+=`<div class="extra-box"><div class="extra-label">Cards O${c.line}</div><div class="extra-val">${pct(c.over)}</div></div>`;
+    if(cr.expected_total!=null) extraHtml+=`<div class="extra-box"><div class="extra-label">Exp. Corners</div><div class="extra-val">${cr.expected_total}</div></div>`;
+    if(cr.over!=null) extraHtml+=`<div class="extra-box"><div class="extra-label">Corners O${cr.line}</div><div class="extra-val">${pct(cr.over)}</div></div>`;
+    extraHtml+='</div>';
+  }
+
+  const neutralBadge=m.neutral_venue?`<div class="neutral-badge">Neutral</div>`:
+                     m.host_advantage?`<div class="neutral-badge" style="color:#81C784;border-color:rgba(129,199,132,.3);background:rgba(129,199,132,.1)">Host</div>`:'';
+
+  return `<div class="match-card">
+  <div class="card-header">
+    <div class="teams-row">
+      <div class="team">${imgH}<div class="team-name">${m.home_team}</div></div>
+      <div class="vs-block">
+        <div class="vs">VS</div>
+        ${neutralBadge}
+      </div>
+      <div class="team">${imgA}<div class="team-name">${m.away_team}</div></div>
+    </div>
+    <div class="outcome-bar" style="margin-top:12px">
+      <div class="bar-home" style="width:${hw}"></div>
+      <div class="bar-draw" style="width:${dw}"></div>
+      <div class="bar-away" style="width:${aw}"></div>
+    </div>
+    <div class="outcome-labels">
+      <span class="outcome-pct home-pct">${hw}<br/><span style="font-size:.65rem;font-weight:400">Win</span></span>
+      <span class="outcome-pct draw-pct">${dw}<br/><span style="font-size:.65rem;font-weight:400">Draw</span></span>
+      <span class="outcome-pct away-pct">${aw}<br/><span style="font-size:.65rem;font-weight:400">Win</span></span>
+    </div>
+    ${d.elo?`<div class="elo-row"><span>Elo: <span class="elo-val">${fmt(d.elo.home_elo,0)}</span></span><span>Δ <span class="elo-val">${d.elo.elo_diff>0?'+':''}${fmt(d.elo.elo_diff,0)}</span></span><span>Elo: <span class="elo-val">${fmt(d.elo.away_elo,0)}</span></span></div>`:''}
+  </div>
+  <div class="card-body">
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-label">xG Home</div><div class="stat-val">${fmt(g.expected_home_goals)}</div></div>
+      <div class="stat-box"><div class="stat-label">xG Away</div><div class="stat-val">${fmt(g.expected_away_goals)}</div></div>
+      <div class="stat-box"><div class="stat-label">Over 2.5</div><div class="stat-val ${colorClass(g.over_2_5)}">${pct(g.over_2_5)}</div></div>
+      <div class="stat-box"><div class="stat-label">BTTS</div><div class="stat-val ${colorClass(g.btts)}">${pct(g.btts)}</div></div>
+    </div>
+    <div class="section-title">Top Scorelines</div>
+    <div class="scorelines">${sl}</div>
+    ${extraHtml}
+    ${buildPlayersSection(d)}
+    ${buildReasoning(d)}
+  </div>
+</div>`;
+}
+
+// ── date logic ────────────────────────────────────────────────────────────
+const dates = Object.keys(PREDICTIONS).sort();
+let currentIdx = 0;
+
+// default to today or nearest date
+const today = new Date().toISOString().slice(0,10);
+const todayIdx = dates.indexOf(today);
+if(todayIdx >= 0) currentIdx = todayIdx;
+else if(dates.length) currentIdx = dates.findLastIndex(d=>d<=today) ?? 0;
+
+// populate select
+const sel = document.getElementById('date-select');
+dates.forEach((d,i)=>{
+  const opt=document.createElement('option');
+  opt.value=d;
+  opt.textContent=new Date(d+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+  sel.appendChild(opt);
+});
+
+function render(idx){
+  currentIdx=Math.max(0,Math.min(dates.length-1,idx));
+  const date=dates[currentIdx];
+  sel.value=date;
+  document.getElementById('label-date').textContent=
+    new Date(date+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  const matches=PREDICTIONS[date]||[];
+  const container=document.getElementById('matches');
+  const noMatch=document.getElementById('no-matches');
+  if(!matches.length){container.innerHTML='';noMatch.style.display='';return;}
+  noMatch.style.display='none';
+  container.innerHTML=matches.map(buildCard).join('');
+}
+
+sel.addEventListener('change',()=>render(dates.indexOf(sel.value)));
+document.getElementById('btn-prev').addEventListener('click',()=>render(currentIdx-1));
+document.getElementById('btn-next').addEventListener('click',()=>render(currentIdx+1));
+
+render(currentIdx);
+</script>
+</body>
+</html>

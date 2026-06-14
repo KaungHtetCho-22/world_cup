@@ -1,0 +1,80 @@
+name: Daily World Cup Predictions Update
+
+on:
+  schedule:
+    # Run every day at 00:30 UTC (gives time for data to update)
+    - cron: '30 0 * * *'
+  workflow_dispatch:
+    inputs:
+      retrain:
+        description: 'Force model retrain'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "pyproject.toml"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: "pyproject.toml"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Refresh raw data (fetch latest results)
+        run: uv run python -m src.data.loader
+        continue-on-error: true
+
+      - name: Retrain models
+        if: github.event.inputs.retrain == 'true' || github.event_name == 'schedule'
+        run: uv run python -m src.pipeline.train --refresh
+        continue-on-error: true
+
+      - name: Generate daily predictions
+        run: uv run python -m src.pipeline.live --all
+        continue-on-error: true
+
+      - name: Commit updated predictions
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add outputs/predictions/ outputs/models/ data/processed/ || true
+          git diff --staged --quiet || git commit -m "chore: daily update $(date -u +'%Y-%m-%d')"
+          git push || true
+
+      - name: Build static website
+        run: python3 scripts/build_site.py
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './public'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

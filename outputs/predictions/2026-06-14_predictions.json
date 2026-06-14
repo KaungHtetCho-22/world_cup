@@ -1,0 +1,214 @@
+[
+  {
+    "match": {
+      "home_team": "Qatar",
+      "away_team": "Switzerland",
+      "date": "2026-06-14",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1686.6,
+      "away_elo": 1931.3,
+      "elo_diff": -244.7
+    },
+    "match_outcome": {
+      "home_win": 0.1888,
+      "draw": 0.2495,
+      "away_win": 0.5617
+    },
+    "goals": {
+      "expected_home_goals": 0.832,
+      "expected_away_goals": 1.499,
+      "over_2_5": 0.4122,
+      "under_2_5": 0.5878,
+      "btts": 0.4461
+    },
+    "top_scorelines": [
+      [
+        0,
+        1,
+        0.1383
+      ],
+      [
+        1,
+        1,
+        0.1286
+      ],
+      [
+        0,
+        2,
+        0.1092
+      ],
+      [
+        0,
+        0,
+        0.1045
+      ],
+      [
+        1,
+        2,
+        0.0909
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Brazil",
+      "away_team": "Morocco",
+      "date": "2026-06-14",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1988.5,
+      "away_elo": 1997.1,
+      "elo_diff": -8.6
+    },
+    "match_outcome": {
+      "home_win": 0.2266,
+      "draw": 0.3002,
+      "away_win": 0.4732
+    },
+    "goals": {
+      "expected_home_goals": 0.611,
+      "expected_away_goals": 1.267,
+      "over_2_5": 0.2905,
+      "under_2_5": 0.7095,
+      "btts": 0.3358
+    },
+    "top_scorelines": [
+      [
+        0,
+        1,
+        0.1864
+      ],
+      [
+        0,
+        0,
+        0.16
+      ],
+      [
+        1,
+        1,
+        0.1256
+      ],
+      [
+        0,
+        2,
+        0.1227
+      ],
+      [
+        1,
+        0,
+        0.0862
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Haiti",
+      "away_team": "Scotland",
+      "date": "2026-06-14",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1710.6,
+      "away_elo": 1868.2,
+      "elo_diff": -157.7
+    },
+    "match_outcome": {
+      "home_win": 0.2147,
+      "draw": 0.2612,
+      "away_win": 0.5241
+    },
+    "goals": {
+      "expected_home_goals": 0.847,
+      "expected_away_goals": 1.464,
+      "over_2_5": 0.4069,
+      "under_2_5": 0.5931,
+      "btts": 0.4466
+    },
+    "top_scorelines": [
+      [
+        0,
+        1,
+        0.1377
+      ],
+      [
+        1,
+        1,
+        0.1304
+      ],
+      [
+        0,
+        0,
+        0.1066
+      ],
+      [
+        0,
+        2,
+        0.1063
+      ],
+      [
+        1,
+        2,
+        0.09
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Australia",
+      "away_team": "Turkey",
+      "date": "2026-06-14",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1927.3,
+      "away_elo": 1989.2,
+      "elo_diff": -61.9
+    },
+    "match_outcome": {
+      "home_win": 0.2986,
+      "draw": 0.2962,
+      "away_win": 0.4052
+    },
+    "goals": {
+      "expected_home_goals": 0.952,
+      "expected_away_goals": 1.138,
+      "over_2_5": 0.3478,
+      "under_2_5": 0.6522,
+      "btts": 0.4255
+    },
+    "top_scorelines": [
+      [
+        1,
+        1,
+        0.1421
+      ],
+      [
+        0,
+        1,
+        0.1326
+      ],
+      [
+        0,
+        0,
+        0.1318
+      ],
+      [
+        1,
+        0,
+        0.1096
+      ],
+      [
+        0,
+        2,
+        0.0801
+      ]
+    ]
+  }
+]

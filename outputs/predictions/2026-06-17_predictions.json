@@ -1,0 +1,214 @@
+[
+  {
+    "match": {
+      "home_team": "France",
+      "away_team": "Senegal",
+      "date": "2026-06-17",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 2083.7,
+      "away_elo": 1897.2,
+      "elo_diff": 186.5
+    },
+    "match_outcome": {
+      "home_win": 0.4422,
+      "draw": 0.2883,
+      "away_win": 0.2695
+    },
+    "goals": {
+      "expected_home_goals": 1.075,
+      "expected_away_goals": 0.923,
+      "over_2_5": 0.3226,
+      "under_2_5": 0.6774,
+      "btts": 0.405
+    },
+    "top_scorelines": [
+      [
+        0,
+        0,
+        0.1439
+      ],
+      [
+        1,
+        1,
+        0.1427
+      ],
+      [
+        1,
+        0,
+        0.1377
+      ],
+      [
+        0,
+        1,
+        0.117
+      ],
+      [
+        2,
+        0,
+        0.0784
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Iraq",
+      "away_team": "Norway",
+      "date": "2026-06-17",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1811.4,
+      "away_elo": 1955.5,
+      "elo_diff": -144.1
+    },
+    "match_outcome": {
+      "home_win": 0.266,
+      "draw": 0.2878,
+      "away_win": 0.4462
+    },
+    "goals": {
+      "expected_home_goals": 0.904,
+      "expected_away_goals": 1.149,
+      "over_2_5": 0.3378,
+      "under_2_5": 0.6622,
+      "btts": 0.4147
+    },
+    "top_scorelines": [
+      [
+        1,
+        1,
+        0.1414
+      ],
+      [
+        0,
+        1,
+        0.1393
+      ],
+      [
+        0,
+        0,
+        0.1364
+      ],
+      [
+        1,
+        0,
+        0.1079
+      ],
+      [
+        0,
+        2,
+        0.0847
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Argentina",
+      "away_team": "Algeria",
+      "date": "2026-06-17",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 2096.5,
+      "away_elo": 1872.6,
+      "elo_diff": 223.9
+    },
+    "match_outcome": {
+      "home_win": 0.4267,
+      "draw": 0.2898,
+      "away_win": 0.2835
+    },
+    "goals": {
+      "expected_home_goals": 0.974,
+      "expected_away_goals": 0.959,
+      "over_2_5": 0.3052,
+      "under_2_5": 0.6948,
+      "btts": 0.3921
+    },
+    "top_scorelines": [
+      [
+        0,
+        0,
+        0.1529
+      ],
+      [
+        1,
+        1,
+        0.1434
+      ],
+      [
+        1,
+        0,
+        0.1328
+      ],
+      [
+        0,
+        1,
+        0.1306
+      ],
+      [
+        2,
+        0,
+        0.0687
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Austria",
+      "away_team": "Jordan",
+      "date": "2026-06-17",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1867.1,
+      "away_elo": 1792.9,
+      "elo_diff": 74.2
+    },
+    "match_outcome": {
+      "home_win": 0.3946,
+      "draw": 0.2968,
+      "away_win": 0.3086
+    },
+    "goals": {
+      "expected_home_goals": 1.088,
+      "expected_away_goals": 0.981,
+      "over_2_5": 0.3421,
+      "under_2_5": 0.6579,
+      "btts": 0.4228
+    },
+    "top_scorelines": [
+      [
+        1,
+        1,
+        0.143
+      ],
+      [
+        0,
+        0,
+        0.1344
+      ],
+      [
+        1,
+        0,
+        0.1292
+      ],
+      [
+        0,
+        1,
+        0.1157
+      ],
+      [
+        2,
+        0,
+        0.0747
+      ]
+    ]
+  }
+]

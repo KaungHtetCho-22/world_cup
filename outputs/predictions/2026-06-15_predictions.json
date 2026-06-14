@@ -1,0 +1,267 @@
+[
+  {
+    "match": {
+      "home_team": "Germany",
+      "away_team": "Cura\u00e7ao",
+      "date": "2026-06-15",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 2012.3,
+      "away_elo": 1648.6,
+      "elo_diff": 363.8
+    },
+    "match_outcome": {
+      "home_win": 0.6268,
+      "draw": 0.2318,
+      "away_win": 0.1413
+    },
+    "goals": {
+      "expected_home_goals": 1.574,
+      "expected_away_goals": 0.717,
+      "over_2_5": 0.4016,
+      "under_2_5": 0.5984,
+      "btts": 0.4127
+    },
+    "top_scorelines": [
+      [
+        1,
+        0,
+        0.1523
+      ],
+      [
+        2,
+        0,
+        0.1253
+      ],
+      [
+        1,
+        1,
+        0.1211
+      ],
+      [
+        0,
+        0,
+        0.1081
+      ],
+      [
+        2,
+        1,
+        0.0899
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Netherlands",
+      "away_team": "Japan",
+      "date": "2026-06-15",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1992.1,
+      "away_elo": 1995.0,
+      "elo_diff": -2.9
+    },
+    "match_outcome": {
+      "home_win": 0.3973,
+      "draw": 0.2966,
+      "away_win": 0.3061
+    },
+    "goals": {
+      "expected_home_goals": 1.23,
+      "expected_away_goals": 0.966,
+      "over_2_5": 0.3763,
+      "under_2_5": 0.6237,
+      "btts": 0.4464
+    },
+    "top_scorelines": [
+      [
+        1,
+        1,
+        0.1402
+      ],
+      [
+        1,
+        0,
+        0.1288
+      ],
+      [
+        0,
+        0,
+        0.1192
+      ],
+      [
+        0,
+        1,
+        0.0994
+      ],
+      [
+        2,
+        0,
+        0.0842
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Ivory Coast",
+      "away_team": "Ecuador",
+      "date": "2026-06-15",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1813.7,
+      "away_elo": 2009.1,
+      "elo_diff": -195.5
+    },
+    "match_outcome": {
+      "home_win": 0.2697,
+      "draw": 0.3224,
+      "away_win": 0.4079
+    },
+    "goals": {
+      "expected_home_goals": 0.761,
+      "expected_away_goals": 0.801,
+      "over_2_5": 0.2069,
+      "under_2_5": 0.7931,
+      "btts": 0.3014
+    },
+    "top_scorelines": [
+      [
+        0,
+        0,
+        0.2175
+      ],
+      [
+        0,
+        1,
+        0.1602
+      ],
+      [
+        1,
+        0,
+        0.1518
+      ],
+      [
+        1,
+        1,
+        0.1356
+      ],
+      [
+        0,
+        2,
+        0.0673
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Sweden",
+      "away_team": "Tunisia",
+      "date": "2026-06-15",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1788.2,
+      "away_elo": 1752.9,
+      "elo_diff": 35.3
+    },
+    "match_outcome": {
+      "home_win": 0.3679,
+      "draw": 0.2958,
+      "away_win": 0.3363
+    },
+    "goals": {
+      "expected_home_goals": 1.101,
+      "expected_away_goals": 1.075,
+      "over_2_5": 0.3709,
+      "under_2_5": 0.6291,
+      "btts": 0.4479
+    },
+    "top_scorelines": [
+      [
+        1,
+        1,
+        0.1425
+      ],
+      [
+        0,
+        0,
+        0.1216
+      ],
+      [
+        1,
+        0,
+        0.1168
+      ],
+      [
+        0,
+        1,
+        0.1138
+      ],
+      [
+        2,
+        1,
+        0.074
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Spain",
+      "away_team": "Cape Verde",
+      "date": "2026-06-15",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 2156.5,
+      "away_elo": 1695.7,
+      "elo_diff": 460.8
+    },
+    "match_outcome": {
+      "home_win": 0.6762,
+      "draw": 0.2091,
+      "away_win": 0.1147
+    },
+    "goals": {
+      "expected_home_goals": 1.742,
+      "expected_away_goals": 0.7,
+      "over_2_5": 0.4411,
+      "under_2_5": 0.5589,
+      "btts": 0.4215
+    },
+    "top_scorelines": [
+      [
+        1,
+        0,
+        0.1452
+      ],
+      [
+        2,
+        0,
+        0.132
+      ],
+      [
+        1,
+        1,
+        0.1125
+      ],
+      [
+        0,
+        0,
+        0.0935
+      ],
+      [
+        2,
+        1,
+        0.0924
+      ]
+    ]
+  }
+]

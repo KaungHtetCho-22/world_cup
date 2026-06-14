@@ -1,0 +1,161 @@
+[
+  {
+    "match": {
+      "home_team": "Belgium",
+      "away_team": "Iran",
+      "date": "2026-06-22",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1933.3,
+      "away_elo": 1899.4,
+      "elo_diff": 33.9
+    },
+    "match_outcome": {
+      "home_win": 0.4221,
+      "draw": 0.2987,
+      "away_win": 0.2792
+    },
+    "goals": {
+      "expected_home_goals": 1.198,
+      "expected_away_goals": 0.86,
+      "over_2_5": 0.3391,
+      "under_2_5": 0.6609,
+      "btts": 0.4108
+    },
+    "top_scorelines": [
+      [
+        1,
+        0,
+        0.145
+      ],
+      [
+        1,
+        1,
+        0.1396
+      ],
+      [
+        0,
+        0,
+        0.1357
+      ],
+      [
+        0,
+        1,
+        0.1019
+      ],
+      [
+        2,
+        0,
+        0.0916
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "Uruguay",
+      "away_team": "Cape Verde",
+      "date": "2026-06-22",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1931.8,
+      "away_elo": 1695.7,
+      "elo_diff": 236.1
+    },
+    "match_outcome": {
+      "home_win": 0.4802,
+      "draw": 0.2863,
+      "away_win": 0.2335
+    },
+    "goals": {
+      "expected_home_goals": 1.098,
+      "expected_away_goals": 0.821,
+      "over_2_5": 0.3014,
+      "under_2_5": 0.6986,
+      "btts": 0.3813
+    },
+    "top_scorelines": [
+      [
+        0,
+        0,
+        0.1548
+      ],
+      [
+        1,
+        0,
+        0.1531
+      ],
+      [
+        1,
+        1,
+        0.1403
+      ],
+      [
+        0,
+        1,
+        0.1125
+      ],
+      [
+        2,
+        0,
+        0.0884
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "New Zealand",
+      "away_team": "Egypt",
+      "date": "2026-06-22",
+      "neutral_venue": true,
+      "host_advantage": false
+    },
+    "elo": {
+      "home_elo": 1758.6,
+      "away_elo": 1813.0,
+      "elo_diff": -54.3
+    },
+    "match_outcome": {
+      "home_win": 0.2603,
+      "draw": 0.3088,
+      "away_win": 0.4309
+    },
+    "goals": {
+      "expected_home_goals": 0.744,
+      "expected_away_goals": 1.106,
+      "over_2_5": 0.2828,
+      "under_2_5": 0.7172,
+      "btts": 0.3591
+    },
+    "top_scorelines": [
+      [
+        0,
+        1,
+        0.166
+      ],
+      [
+        0,
+        0,
+        0.1651
+      ],
+      [
+        1,
+        1,
+        0.1373
+      ],
+      [
+        1,
+        0,
+        0.1092
+      ],
+      [
+        0,
+        2,
+        0.0961
+      ]
+    ]
+  }
+]

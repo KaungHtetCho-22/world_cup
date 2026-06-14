@@ -1,0 +1,105 @@
+match_id,date,group,round,home_team,away_team,home_team_id,away_team_id,finished,started,score,page_url
+4667751,2026-06-12 02:00:00+07:00,A,1,Mexico,South Africa,6710,6316,True,True,2 - 0,https://www.fotmob.com/matches/south-africa-vs-mexico/1einvt#4667751
+4667752,2026-06-12 09:00:00+07:00,A,1,South Korea,Czechia,7804,8496,True,True,2 - 1,https://www.fotmob.com/matches/south-korea-vs-czechia/273opa#4667752
+4667757,2026-06-13 02:00:00+07:00,B,1,Canada,Bosnia and Herzegovina,5810,10106,False,False,,https://www.fotmob.com/matches/canada-vs-bosnia-herzegovina/23f1qo#4667757
+4667771,2026-06-13 08:00:00+07:00,D,1,USA,Paraguay,6713,6724,False,False,,https://www.fotmob.com/matches/usa-vs-paraguay/1hr85j#4667771
+4667758,2026-06-14 02:00:00+07:00,B,1,Qatar,Switzerland,5902,6717,False,False,,https://www.fotmob.com/matches/qatar-vs-switzerland/1beswv#4667758
+4667764,2026-06-14 05:00:00+07:00,C,1,Brazil,Morocco,8256,6262,False,False,,https://www.fotmob.com/matches/morocco-vs-brazil/1qr4gd#4667764
+4667765,2026-06-14 08:00:00+07:00,C,1,Haiti,Scotland,5934,8498,False,False,,https://www.fotmob.com/matches/haiti-vs-scotland/1q0g2q#4667765
+4667772,2026-06-14 11:00:00+07:00,D,1,Australia,Turkiye,6716,6595,False,False,,https://www.fotmob.com/matches/turkiye-vs-australia/1gr3uk#4667772
+4667777,2026-06-15 00:00:00+07:00,E,1,Germany,Curacao,8570,287981,False,False,,https://www.fotmob.com/matches/germany-vs-curacao/k77fsyu#4667777
+4667783,2026-06-15 03:00:00+07:00,F,1,Netherlands,Japan,6708,6715,False,False,,https://www.fotmob.com/matches/netherlands-vs-japan/1hn72b#4667783
+4667778,2026-06-15 06:00:00+07:00,E,1,Ivory Coast,Ecuador,6709,6707,False,False,,https://www.fotmob.com/matches/ecuador-vs-ivory-coast/1hl6kp#4667778
+4667784,2026-06-15 09:00:00+07:00,F,1,Sweden,Tunisia,8520,6719,False,False,,https://www.fotmob.com/matches/tunisia-vs-sweden/1x5290#4667784
+4667798,2026-06-15 23:00:00+07:00,H,1,Spain,Cape Verde,6720,5888,False,False,,https://www.fotmob.com/matches/cape-verde-vs-spain/1bbtuo#4667798
+4667790,2026-06-16 02:00:00+07:00,G,1,Belgium,Egypt,8263,10255,False,False,,https://www.fotmob.com/matches/belgium-vs-egypt/2u3bhg#4667790
+4667799,2026-06-16 05:00:00+07:00,H,1,Saudi Arabia,Uruguay,7795,5796,False,False,,https://www.fotmob.com/matches/uruguay-vs-saudi-arabia/1izuvb#4667799
+4667791,2026-06-16 08:00:00+07:00,G,1,Iran,New Zealand,6711,5820,False,False,,https://www.fotmob.com/matches/new-zealand-vs-iran/1ar30l#4667791
+4667804,2026-06-17 02:00:00+07:00,I,1,France,Senegal,6723,6395,False,False,,https://www.fotmob.com/matches/senegal-vs-france/1f8fvo#4667804
+4667805,2026-06-17 05:00:00+07:00,I,1,Iraq,Norway,5819,8492,False,False,,https://www.fotmob.com/matches/iraq-vs-norway/1oz68o#4667805
+4667812,2026-06-17 08:00:00+07:00,J,1,Argentina,Algeria,6706,6317,False,False,,https://www.fotmob.com/matches/algeria-vs-argentina/1ehtqa#4667812
+4667813,2026-06-17 11:00:00+07:00,J,1,Austria,Jordan,8255,5816,False,False,,https://www.fotmob.com/matches/jordan-vs-austria/1my603#4667813
+4667819,2026-06-18 00:00:00+07:00,K,1,Portugal,DR Congo,8361,6321,False,False,,https://www.fotmob.com/matches/dr-congo-vs-portugal/1s6g4o#4667819
+4667825,2026-06-18 03:00:00+07:00,L,1,England,Croatia,8491,10155,False,False,,https://www.fotmob.com/matches/england-vs-croatia/2viayw#4667825
+4667826,2026-06-18 06:00:00+07:00,L,1,Ghana,Panama,6714,5922,False,False,,https://www.fotmob.com/matches/panama-vs-ghana/1bjek0#4667826
+4667820,2026-06-18 09:00:00+07:00,K,1,Uzbekistan,Colombia,8700,8258,False,False,,https://www.fotmob.com/matches/colombia-vs-uzbekistan/2dm7x9#4667820
+4667753,2026-06-18 23:00:00+07:00,A,2,Czechia,South Africa,8496,6316,False,False,,https://www.fotmob.com/matches/south-africa-vs-czechia/1tbjja#4667753
+4667759,2026-06-19 02:00:00+07:00,B,2,Switzerland,Bosnia and Herzegovina,6717,10106,False,False,,https://www.fotmob.com/matches/switzerland-vs-bosnia-herzegovina/2c9awx#4667759
+4667760,2026-06-19 05:00:00+07:00,B,2,Canada,Qatar,5810,5902,False,False,,https://www.fotmob.com/matches/canada-vs-qatar/14u9ym#4667760
+4667754,2026-06-19 08:00:00+07:00,A,2,Mexico,South Korea,6710,7804,False,False,,https://www.fotmob.com/matches/mexico-vs-south-korea/1qpvav#4667754
+4667774,2026-06-20 02:00:00+07:00,D,2,USA,Australia,6713,6716,False,False,,https://www.fotmob.com/matches/usa-vs-australia/1hox83#4667774
+4667766,2026-06-20 05:00:00+07:00,C,2,Scotland,Morocco,8498,6262,False,False,,https://www.fotmob.com/matches/morocco-vs-scotland/1sv292#4667766
+4667767,2026-06-20 07:30:00+07:00,C,2,Brazil,Haiti,8256,5934,False,False,,https://www.fotmob.com/matches/haiti-vs-brazil/1ny7ix#4667767
+4667773,2026-06-20 10:00:00+07:00,D,2,Turkiye,Paraguay,6595,6724,False,False,,https://www.fotmob.com/matches/turkiye-vs-paraguay/1gte1s#4667773
+4667786,2026-06-21 00:00:00+07:00,F,2,Netherlands,Sweden,6708,8520,False,False,,https://www.fotmob.com/matches/netherlands-vs-sweden/1x1gy6#4667786
+4667780,2026-06-21 03:00:00+07:00,E,2,Germany,Ivory Coast,8570,6709,False,False,,https://www.fotmob.com/matches/ivory-coast-vs-germany/1xi59e#4667780
+4667779,2026-06-21 07:00:00+07:00,E,2,Ecuador,Curacao,6707,287981,False,False,,https://www.fotmob.com/matches/ecuador-vs-curacao/jy3jhs3#4667779
+4667785,2026-06-21 11:00:00+07:00,F,2,Tunisia,Japan,6719,6715,False,False,,https://www.fotmob.com/matches/japan-vs-tunisia/1hqd1q#4667785
+4667801,2026-06-21 23:00:00+07:00,H,2,Spain,Saudi Arabia,6720,7795,False,False,,https://www.fotmob.com/matches/spain-vs-saudi-arabia/1qq6ht#4667801
+4667793,2026-06-22 02:00:00+07:00,G,2,Belgium,Iran,8263,6711,False,False,,https://www.fotmob.com/matches/iran-vs-belgium/1ur91k#4667793
+4667800,2026-06-22 05:00:00+07:00,H,2,Uruguay,Cape Verde,5796,5888,False,False,,https://www.fotmob.com/matches/uruguay-vs-cape-verde/14n97e#4667800
+4667792,2026-06-22 08:00:00+07:00,G,2,New Zealand,Egypt,5820,10255,False,False,,https://www.fotmob.com/matches/new-zealand-vs-egypt/24xk7y#4667792
+4667815,2026-06-23 00:00:00+07:00,J,2,Argentina,Austria,6706,8255,False,False,,https://www.fotmob.com/matches/argentina-vs-austria/1un2w8#4667815
+4667807,2026-06-23 04:00:00+07:00,I,2,France,Iraq,6723,5819,False,False,,https://www.fotmob.com/matches/iraq-vs-france/1au1fo#4667807
+4667806,2026-06-23 07:00:00+07:00,I,2,Norway,Senegal,8492,6395,False,False,,https://www.fotmob.com/matches/senegal-vs-norway/1tzewo#4667806
+4667814,2026-06-23 10:00:00+07:00,J,2,Jordan,Algeria,5816,6317,False,False,,https://www.fotmob.com/matches/jordan-vs-algeria/17tvf0#4667814
+4667822,2026-06-24 00:00:00+07:00,K,2,Portugal,Uzbekistan,8361,8700,False,False,,https://www.fotmob.com/matches/portugal-vs-uzbekistan/2enrsr#4667822
+4667828,2026-06-24 03:00:00+07:00,L,2,England,Ghana,8491,6714,False,False,,https://www.fotmob.com/matches/ghana-vs-england/1wtyve#4667828
+4667827,2026-06-24 06:00:00+07:00,L,2,Panama,Croatia,5922,10155,False,False,,https://www.fotmob.com/matches/panama-vs-croatia/24y93x#4667827
+4667821,2026-06-24 09:00:00+07:00,K,2,Colombia,DR Congo,8258,6321,False,False,,https://www.fotmob.com/matches/dr-congo-vs-colombia/1ra58w#4667821
+4667762,2026-06-25 02:00:00+07:00,B,3,Bosnia and Herzegovina,Qatar,10106,5902,False,False,,https://www.fotmob.com/matches/qatar-vs-bosnia-herzegovina/24aiya#4667762
+4667761,2026-06-25 02:00:00+07:00,B,3,Switzerland,Canada,6717,5810,False,False,,https://www.fotmob.com/matches/canada-vs-switzerland/1aq0cl#4667761
+4667768,2026-06-25 05:00:00+07:00,C,3,Scotland,Brazil,8498,8256,False,False,,https://www.fotmob.com/matches/brazil-vs-scotland/2bkifh#4667768
+4667769,2026-06-25 05:00:00+07:00,C,3,Morocco,Haiti,6262,5934,False,False,,https://www.fotmob.com/matches/haiti-vs-morocco/18aaq8#4667769
+4667755,2026-06-25 08:00:00+07:00,A,3,Czechia,Mexico,8496,6710,False,False,,https://www.fotmob.com/matches/mexico-vs-czechia/1wualx#4667755
+4667756,2026-06-25 08:00:00+07:00,A,3,South Africa,South Korea,6316,7804,False,False,,https://www.fotmob.com/matches/south-africa-vs-south-korea/1ncyls#4667756
+4667782,2026-06-26 03:00:00+07:00,E,3,Curacao,Ivory Coast,287981,6709,False,False,,https://www.fotmob.com/matches/ivory-coast-vs-curacao/jy3w4js#4667782
+4667781,2026-06-26 03:00:00+07:00,E,3,Ecuador,Germany,6707,8570,False,False,,https://www.fotmob.com/matches/ecuador-vs-germany/1xhhol#4667781
+4667788,2026-06-26 06:00:00+07:00,F,3,Japan,Sweden,6715,8520,False,False,,https://www.fotmob.com/matches/japan-vs-sweden/1x3r7y#4667788
+4667787,2026-06-26 06:00:00+07:00,F,3,Tunisia,Netherlands,6719,6708,False,False,,https://www.fotmob.com/matches/netherlands-vs-tunisia/1hoci5#4667787
+4667776,2026-06-26 09:00:00+07:00,D,3,Paraguay,Australia,6724,6716,False,False,,https://www.fotmob.com/matches/australia-vs-paraguay/1hs39g#4667776
+4667775,2026-06-26 09:00:00+07:00,D,3,Turkiye,USA,6595,6713,False,False,,https://www.fotmob.com/matches/turkiye-vs-usa/1gq91b#4667775
+4667808,2026-06-27 02:00:00+07:00,I,3,Norway,France,8492,6723,False,False,,https://www.fotmob.com/matches/france-vs-norway/1wx88k#4667808
+4667809,2026-06-27 02:00:00+07:00,I,3,Senegal,Iraq,6395,5819,False,False,,https://www.fotmob.com/matches/iraq-vs-senegal/18f0co#4667809
+4667802,2026-06-27 07:00:00+07:00,H,3,Uruguay,Spain,5796,6720,False,False,,https://www.fotmob.com/matches/uruguay-vs-spain/1an22i#4667802
+4667803,2026-06-27 07:00:00+07:00,H,3,Cape Verde,Saudi Arabia,5888,7795,False,False,,https://www.fotmob.com/matches/cape-verde-vs-saudi-arabia/1jqqyp#4667803
+4667795,2026-06-27 10:00:00+07:00,G,3,Egypt,Iran,10255,6711,False,False,,https://www.fotmob.com/matches/iran-vs-egypt/2dp33g#4667795
+4667794,2026-06-27 10:00:00+07:00,G,3,New Zealand,Belgium,5820,8263,False,False,,https://www.fotmob.com/matches/new-zealand-vs-belgium/1n1sct#4667794
+4667830,2026-06-28 04:00:00+07:00,L,3,Croatia,Ghana,10155,6714,False,False,,https://www.fotmob.com/matches/ghana-vs-croatia/2cpwux#4667830
+4667829,2026-06-28 04:00:00+07:00,L,3,Panama,England,5922,8491,False,False,,https://www.fotmob.com/matches/panama-vs-england/1pukme#4667829
+4667823,2026-06-28 06:30:00+07:00,K,3,Colombia,Portugal,8258,8361,False,False,,https://www.fotmob.com/matches/colombia-vs-portugal/2a883f#4667823
+4667824,2026-06-28 06:30:00+07:00,K,3,DR Congo,Uzbekistan,6321,8700,False,False,,https://www.fotmob.com/matches/dr-congo-vs-uzbekistan/1v6daf#4667824
+4667817,2026-06-28 09:00:00+07:00,J,3,Algeria,Austria,6317,8255,False,False,,https://www.fotmob.com/matches/algeria-vs-austria/1r7yil#4667817
+4667816,2026-06-28 09:00:00+07:00,J,3,Jordan,Argentina,5816,6706,False,False,,https://www.fotmob.com/matches/jordan-vs-argentina/1aoo0p#4667816
+4653705,2026-06-29 02:00:00+07:00,,1/16,2A,2B,1878,1879,False,False,,https://www.fotmob.com/matches/2a-vs-2b/47ciq#4653705
+4653711,2026-06-30 00:00:00+07:00,,1/16,1C,2F,1872,1883,False,False,,https://www.fotmob.com/matches/1c-vs-2f/476q5#4653711
+4653703,2026-06-30 03:30:00+07:00,,1/16,1E,3ABCDF,1874,1685711,False,False,,https://www.fotmob.com/matches/1e-vs-3abcdf/i65weow3#4653703
+4653706,2026-06-30 08:00:00+07:00,,1/16,1F,2C,1875,1880,False,False,,https://www.fotmob.com/matches/1f-vs-2c/476q2#4653706
+4653712,2026-07-01 00:00:00+07:00,,1/16,2E,2I,1882,1685707,False,False,,https://www.fotmob.com/matches/2e-vs-2i/i660fdi1#4653712
+4653704,2026-07-01 04:00:00+07:00,,1/16,1I,3CDFGH,1685703,1685712,False,False,,https://www.fotmob.com/matches/1i-vs-3cdfgh/20iu46wbo#4653704
+4653713,2026-07-01 08:00:00+07:00,,1/16,1A,3CEFHI,1870,1685715,False,False,,https://www.fotmob.com/matches/1a-vs-3cefhi/i65weovz#4653713
+4653714,2026-07-01 23:00:00+07:00,,1/16,1L,3EHIJK,1685706,1685716,False,False,,https://www.fotmob.com/matches/1l-vs-3ehijk/20iui8q5h#4653714
+4653710,2026-07-02 03:00:00+07:00,,1/16,1G,3AEHIJ,1876,1685714,False,False,,https://www.fotmob.com/matches/1g-vs-3aehij/i661fjnd#4653710
+4653709,2026-07-02 07:00:00+07:00,,1/16,1D,3BEFIJ,1873,1685713,False,False,,https://www.fotmob.com/matches/1d-vs-3befij/i65xev1g#4653709
+4653708,2026-07-03 02:00:00+07:00,,1/16,1H,2J,1877,1685708,False,False,,https://www.fotmob.com/matches/1h-vs-2j/i65weow6#4653708
+4653707,2026-07-03 06:00:00+07:00,,1/16,2K,2L,1685709,1685710,False,False,,https://www.fotmob.com/matches/2k-vs-2l/20iuc7xxk#4653707
+4653717,2026-07-03 10:00:00+07:00,,1/16,1B,3EFGIJ,1871,1685717,False,False,,https://www.fotmob.com/matches/1b-vs-3efgij/i65zf7c9#4653717
+4653716,2026-07-04 01:00:00+07:00,,1/16,2D,2G,1881,1884,False,False,,https://www.fotmob.com/matches/2d-vs-2g/47zqr#4653716
+4653715,2026-07-04 05:00:00+07:00,,1/16,1J,2H,1685704,1885,False,False,,https://www.fotmob.com/matches/2h-vs-1j/i660fdi4#4653715
+4653718,2026-07-04 08:30:00+07:00,,1/16,1K,3DEIJL,1685705,1685718,False,False,,https://www.fotmob.com/matches/1k-vs-3deijl/20iuk8zk6#4653718
+4653843,2026-07-05 00:00:00+07:00,,1/8,2A/2B,1F/2C,1685719,1685721,False,False,,https://www.fotmob.com/matches/2a2b-vs-1f2c/20ividfld#4653843
+4653842,2026-07-05 04:00:00+07:00,,1/8,1E/3ABCDF,1I/3CDFGH,1685720,1685723,False,False,,https://www.fotmob.com/matches/1e3abcdf-vs-1i3cdfgh/20ivoe7ux#4653842
+4653846,2026-07-06 03:00:00+07:00,,1/8,1C/2F,2E/2I,1685722,1685724,False,False,,https://www.fotmob.com/matches/1c2f-vs-2e2i/20ivuf04p#4653846
+4653847,2026-07-06 07:00:00+07:00,,1/8,1A/3CEFHI,1L/3EHIJK,1685725,1685728,False,False,,https://www.fotmob.com/matches/1a3cefhi-vs-1l3ehijk/20iw8gu4j#4653847
+4653844,2026-07-07 02:00:00+07:00,,1/8,2K/2L,1H/2J,1685729,1685730,False,False,,https://www.fotmob.com/matches/2k2l-vs-1h2j/20iwkieq0#4653844
+4653845,2026-07-07 07:00:00+07:00,,1/8,1D/3BEFIJ,1G/3AEHIJ,1685726,1685727,False,False,,https://www.fotmob.com/matches/1d3befij-vs-1g3aehij/20iw8gu4i#4653845
+4653848,2026-07-07 23:00:00+07:00,,1/8,1J/2H,2D/2G,1685732,1685733,False,False,,https://www.fotmob.com/matches/1j2h-vs-2d2g/20iwwjzci#4653848
+4653849,2026-07-08 03:00:00+07:00,,1/8,1B/3EFGIJ,1K/3DEIJL,1685731,1685734,False,False,,https://www.fotmob.com/matches/1b3efgij-vs-1k3deijl/20iwwjzcj#4653849
+4653851,2026-07-10 03:00:00+07:00,,1/4,Winner EF 1,Winner EF 2,1440908,1440909,False,False,,https://www.fotmob.com/matches/winner-ef-1-vs-winner-ef-2/1gzlq2j4i#4653851
+4653853,2026-07-11 02:00:00+07:00,,1/4,Winner EF 5,Winner EF 6,1440912,1440915,False,False,,https://www.fotmob.com/matches/winner-ef-5-vs-winner-ef-6/1gzm787ex#4653853
+4653852,2026-07-12 04:00:00+07:00,,1/4,Winner EF 3,Winner EF 4,1440910,1440911,False,False,,https://www.fotmob.com/matches/winner-ef-3-vs-winner-ef-4/1gzlwxlmq#4653852
+4653854,2026-07-12 08:00:00+07:00,,1/4,Winner EF 7,Winner EF 8,1440914,1440913,False,False,,https://www.fotmob.com/matches/winner-ef-8-vs-winner-ef-7/1gzm787ew#4653854
+4653855,2026-07-15 02:00:00+07:00,,1/2,Winner QF 1,Winner QF 2,2036,2037,False,False,,https://www.fotmob.com/matches/winner-qf-1-vs-winner-qf-2/4xvci#4653855
+4653856,2026-07-16 02:00:00+07:00,,1/2,Winner QF 3,Winner QF 4,2038,2039,False,False,,https://www.fotmob.com/matches/winner-qf-3-vs-winner-qf-4/4y7xe#4653856
+4653857,2026-07-19 04:00:00+07:00,,bronze,Loser SF 1,Loser SF 2,1981,1982,False,False,,https://www.fotmob.com/matches/loser-sf-1-vs-loser-sf-2/4oe88#4653857
+4653858,2026-07-20 02:00:00+07:00,,final,Winner SF 1,Winner SF 2,1983,1984,False,False,,https://www.fotmob.com/matches/winner-sf-1-vs-winner-sf-2/4oqgw#4653858
