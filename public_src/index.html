@@ -29,9 +29,9 @@
       --green: #34D399;
       --amber: #FBBF24;
       /* Glassmorphism surfaces — very transparent */
-      --card-bg: rgba(8, 12, 28, 0.38);
-      --card-bg2: rgba(0, 0, 0, 0.28);
-      --card-border: rgba(255, 255, 255, 0.10);
+      --card-bg: rgba(8, 12, 28, 0.15);
+      --card-bg2: rgba(0, 0, 0, 0.12);
+      --card-border: rgba(255, 255, 255, 0.08);
       --surface: rgba(255, 255, 255, 0.06);
       --text: rgba(238, 240, 245, 0.92);
       --text-strong: #fff;
@@ -85,9 +85,9 @@
       padding: 14px 32px;
       gap: 16px;
       flex-wrap: wrap;
-      background: rgba(5, 8, 16, .50);
-      border-bottom: 1px solid rgba(255, 255, 255, .07);
-      backdrop-filter: blur(32px);
+      background: rgba(5, 8, 16, .25);
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+      backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -223,9 +223,9 @@
       border: 1px solid var(--card-border);
       border-radius: 24px;
       overflow: hidden;
-      backdrop-filter: blur(28px) saturate(1.4);
-      -webkit-backdrop-filter: blur(28px) saturate(1.4);
-      box-shadow: 0 8px 40px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .08);
+      backdrop-filter: blur(8px) saturate(1.2);
+      -webkit-backdrop-filter: blur(8px) saturate(1.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .4), inset 0 1px 0 rgba(255, 255, 255, .06);
       transition: transform .22s, box-shadow .22s, border-color .22s;
     }
 
@@ -245,8 +245,8 @@
       border-bottom: 1px solid var(--card-border);
       /* subtle pitch-centre radial */
       background:
-        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(52, 211, 153, .04) 0%, transparent 65%),
-        linear-gradient(160deg, rgba(0, 60, 25, .25) 0%, rgba(10, 18, 40, .15) 100%);
+        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(52, 211, 153, .02) 0%, transparent 65%),
+        linear-gradient(160deg, rgba(0, 60, 25, .15) 0%, rgba(10, 18, 40, .05) 100%);
     }
 
     /* two-column: team left | team right */
@@ -356,7 +356,7 @@
       justify-content: center;
       gap: 0;
       margin-top: 20px;
-      background: rgba(0, 0, 0, .20);
+      background: rgba(0, 0, 0, .10);
       border: 1px solid rgba(255, 255, 255, .07);
       border-radius: 14px;
       overflow: hidden;
@@ -464,7 +464,7 @@
       padding: 14px 10px;
       gap: 4px;
       border-right: 1px solid rgba(255, 255, 255, .06);
-      background: rgba(0, 0, 0, .10);
+      background: rgba(0, 0, 0, .05);
       transition: background .18s;
     }
 
@@ -520,62 +520,6 @@
 
     .fp-val.c-blue {
       color: var(--blue)
-    }
-
-    /* ── SCORELINE SECTION ──────────────────────── */
-    .card-scorelines {
-      padding: 14px 20px 16px;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .sl-header {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .6rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(136, 146, 164, .6);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .sl-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .sl-chip {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      background: rgba(255, 255, 255, .05);
-      border: 1px solid rgba(255, 255, 255, .09);
-      border-radius: 12px;
-      padding: 7px 14px;
-      transition: background .15s, border-color .15s;
-      cursor: default;
-    }
-
-    .sl-chip:hover {
-      background: rgba(255, 255, 255, .09);
-      border-color: rgba(255, 255, 255, .18)
-    }
-
-    .sl-score {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
-      font-weight: 900;
-      color: rgba(255, 255, 255, .85);
-      letter-spacing: .08em;
-    }
-
-    .sl-prob {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .58rem;
-      font-weight: 600;
-      color: rgba(136, 146, 164, .65);
-      letter-spacing: .05em;
     }
 
     /* ── PLAYERS SECTION ────────────────────────── */
@@ -796,6 +740,18 @@
         font-size: 1.4rem
       }
 
+      .odds-item {
+        padding: 8px 6px;
+      }
+
+      .odds-pct {
+        font-size: 1.25rem;
+      }
+
+      .odds-label {
+        font-size: 0.5rem;
+      }
+
       .card-facts {
         grid-template-columns: repeat(2, 1fr)
       }
@@ -956,20 +912,6 @@
       <span class="fp-val ${f.cls}">${f.val}</span>
     </div>`).join('');
 
-      // top scorelines
-      let scoresHtml = '';
-      if (d.top_scorelines && d.top_scorelines.length) {
-        const chips = d.top_scorelines.slice(0, 5).map(([h, a, p]) => `
-      <div class="sl-chip">
-        <span class="sl-score">${h} – ${a}</span>
-        <span class="sl-prob">${Math.round(p * 100)}%</span>
-      </div>`).join('');
-        scoresHtml = `<div class="card-scorelines">
-      <div class="sl-header">Top Scorelines</div>
-      <div class="sl-row">${chips}</div>
-    </div>`;
-      }
-
       // players
       const ps = d.players_to_score || {};
       const homeHalf = buildPlayersHalf('Home Scorers', ps.home, hLogo);
@@ -1029,9 +971,6 @@
 
   <!-- FACTS PILLS -->
   <div class="card-facts">${factsHtml}</div>
-
-  <!-- TOP SCORELINES -->
-  ${scoresHtml}
 
   <!-- PLAYERS TO SCORE -->
   ${playersSection}
