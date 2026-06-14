@@ -1,0 +1,108 @@
+[
+  {
+    "match": {
+      "home_team": "Canada",
+      "away_team": "Bosnia-Herzegovina",
+      "date": "2026-06-13",
+      "neutral_venue": false,
+      "host_advantage": true
+    },
+    "elo": {
+      "home_elo": 1887.2,
+      "away_elo": 1719.3,
+      "elo_diff": 167.9
+    },
+    "match_outcome": {
+      "home_win": 0.4337,
+      "draw": 0.2739,
+      "away_win": 0.2924
+    },
+    "goals": {
+      "expected_home_goals": 1.192,
+      "expected_away_goals": 1.09,
+      "over_2_5": 0.3992,
+      "under_2_5": 0.6008,
+      "btts": 0.4704
+    },
+    "top_scorelines": [
+      [
+        1,
+        1,
+        0.1407
+      ],
+      [
+        1,
+        0,
+        0.1136
+      ],
+      [
+        0,
+        0,
+        0.1101
+      ],
+      [
+        0,
+        1,
+        0.1032
+      ],
+      [
+        2,
+        1,
+        0.079
+      ]
+    ]
+  },
+  {
+    "match": {
+      "home_team": "USA",
+      "away_team": "Paraguay",
+      "date": "2026-06-13",
+      "neutral_venue": false,
+      "host_advantage": true
+    },
+    "elo": {
+      "home_elo": 1888.8,
+      "away_elo": 1935.9,
+      "elo_diff": -47.1
+    },
+    "match_outcome": {
+      "home_win": 0.3485,
+      "draw": 0.2916,
+      "away_win": 0.3599
+    },
+    "goals": {
+      "expected_home_goals": 1.138,
+      "expected_away_goals": 1.085,
+      "over_2_5": 0.3834,
+      "under_2_5": 0.6166,
+      "btts": 0.458
+    },
+    "top_scorelines": [
+      [
+        1,
+        1,
+        0.1418
+      ],
+      [
+        0,
+        0,
+        0.1164
+      ],
+      [
+        1,
+        0,
+        0.1151
+      ],
+      [
+        0,
+        1,
+        0.1094
+      ],
+      [
+        2,
+        1,
+        0.0761
+      ]
+    ]
+  }
+]
