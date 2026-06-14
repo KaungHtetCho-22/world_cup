@@ -1,539 +1,1085 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>WC 2026 · Match Predictions</title>
-<meta name="description" content="Daily AI-powered FIFA World Cup 2026 match predictions."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --gold:#F5C518;--gold2:#e8a000;
-  --blue:#4A9EFF;--red:#FF4B4B;--grey:#8892A4;
-  --green:#34D399;--amber:#FBBF24;
-  --card-bg:rgba(15,20,35,0.82);
-  --card-border:rgba(255,255,255,0.09);
-  --surface:rgba(255,255,255,0.05);
-  --text:#EEF0F5;--sub:#8892A4;
-}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Outfit',sans-serif;
-  color:var(--text);
-  background:#070b18;
-  min-height:100vh;
-  overflow-x:hidden;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WC 2026 · Match Predictions</title>
+  <meta name="description" content="Daily AI-powered FIFA World Cup 2026 match predictions." />
+  <!-- Barlow Condensed = closest free match to the MATCHDAY block condensed style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-/* ── BACKGROUND ─────────────────────────────── */
-#bg{
-  position:fixed;inset:0;z-index:0;
-  background:url('background.png') center/cover no-repeat;
-  filter:brightness(0.2) saturate(1.6) blur(2px);
-  transform:scale(1.06);
-}
-#bg-overlay{
-  position:fixed;inset:0;z-index:1;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(74,158,255,.12), transparent),
-    linear-gradient(180deg, rgba(7,11,24,.9) 0%, rgba(7,11,24,.7) 40%, rgba(7,11,24,.95) 100%);
-}
+    :root {
+      --gold: #F5C518;
+      --gold2: #e8a000;
+      --blue: #4A9EFF;
+      --red: #FF4B4B;
+      --grey: #8892A4;
+      --green: #34D399;
+      --amber: #FBBF24;
+      /* Glassmorphism surfaces — very transparent */
+      --card-bg: rgba(8, 12, 28, 0.38);
+      --card-bg2: rgba(0, 0, 0, 0.28);
+      --card-border: rgba(255, 255, 255, 0.10);
+      --surface: rgba(255, 255, 255, 0.06);
+      --text: rgba(238, 240, 245, 0.92);
+      --text-strong: #fff;
+      --sub: rgba(136, 146, 164, 0.85);
+    }
 
-/* ── APP SHELL ──────────────────────────────── */
-#app{position:relative;z-index:2;min-height:100vh;padding-bottom:80px}
+    html {
+      scroll-behavior: smooth
+    }
 
-/* ── HEADER ─────────────────────────────────── */
-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 32px;gap:16px;flex-wrap:wrap;
-  background:rgba(7,11,24,.75);
-  border-bottom:1px solid rgba(255,255,255,.07);
-  backdrop-filter:blur(24px);
-  position:sticky;top:0;z-index:100;
-}
-.hd-left{display:flex;align-items:center;gap:14px}
-.hd-left img{
-  width:48px;height:48px;object-fit:contain;
-  filter:drop-shadow(0 0 14px rgba(245,197,24,.45));
-}
-.hd-title h1{
-  font-size:1.25rem;font-weight:900;line-height:1;
-  background:linear-gradient(120deg,#F5C518,#FF8C00);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.hd-title p{font-size:.7rem;color:var(--sub);margin-top:3px;font-weight:400;letter-spacing:.05em}
+    body {
+      font-family: 'Barlow', sans-serif;
+      color: var(--text);
+      background: #050810;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-/* ── DATE NAV ───────────────────────────────── */
-.date-nav{display:flex;align-items:center;gap:6px}
-.nav-btn{
-  width:34px;height:34px;display:flex;align-items:center;justify-content:center;
-  background:var(--surface);border:1px solid var(--card-border);
-  border-radius:10px;color:var(--text);cursor:pointer;font-size:1rem;
-  transition:background .18s,border-color .18s;
-}
-.nav-btn:hover{background:rgba(245,197,24,.15);border-color:var(--gold)}
-#date-select{
-  background:rgba(7,11,24,.8);border:1px solid var(--card-border);
-  color:var(--text);border-radius:10px;padding:6px 12px;
-  font-family:'Outfit',sans-serif;font-size:.88rem;cursor:pointer;outline:none;
-  transition:border-color .18s;
-}
-#date-select:focus{border-color:var(--gold)}
-option{background:#0d1220}
+    /* ── BACKGROUND ─────────────────────────────── */
+    #bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: url('background.png') center/cover no-repeat;
+      filter: brightness(0.28) saturate(1.8) blur(1px);
+      transform: scale(1.05);
+    }
 
-/* ── PAGE BODY ──────────────────────────────── */
-.page-body{max-width:860px;margin:0 auto;padding:28px 20px 0}
+    #bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse 90% 60% at 50% -5%, rgba(74, 158, 255, .08), transparent),
+        linear-gradient(180deg, rgba(5, 8, 16, .55) 0%, rgba(5, 8, 16, .3) 40%, rgba(5, 8, 16, .65) 100%);
+    }
 
-/* ── DATE HEADING ───────────────────────────── */
-.day-header{
-  text-align:center;margin-bottom:24px;
-}
-.day-header .day-name{
-  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--sub);font-weight:500;
-}
-.day-header .day-full{
-  font-size:1.6rem;font-weight:900;
-  background:linear-gradient(120deg,#fff 40%,#8892A4);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-top:2px;
-}
+    /* ── APP SHELL ──────────────────────────────── */
+    #app {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      padding-bottom: 80px
+    }
 
-/* ── MATCH LIST ─────────────────────────────── */
-#matches{display:flex;flex-direction:column;gap:16px}
+    /* ── HEADER ─────────────────────────────────── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: rgba(5, 8, 16, .50);
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+      backdrop-filter: blur(32px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-/* ── MATCH CARD ─────────────────────────────── */
-.match-card{
-  background:var(--card-bg);
-  border:1px solid var(--card-border);
-  border-radius:20px;overflow:hidden;
-  backdrop-filter:blur(20px);
-  box-shadow:0 4px 24px rgba(0,0,0,.45);
-  transition:transform .22s, box-shadow .22s, border-color .22s;
-}
-.match-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 40px rgba(0,0,0,.6);
-  border-color:rgba(255,255,255,.18);
-}
+    .hd-left {
+      display: flex;
+      align-items: center;
+      gap: 14px
+    }
 
-/* ── CARD TOP: TEAMS + ODDS ─────────────────── */
-.card-top{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:0;
-  padding:24px 20px 16px;
-  position:relative;
-  background:linear-gradient(135deg,rgba(0,50,20,.35) 0%,rgba(10,18,40,.2) 100%);
-  border-bottom:1px solid var(--card-border);
-}
-/* subtle pitch lines */
-.card-top::after{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,.025) 0%, transparent 60%);
-}
+    .hd-left img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(245, 197, 24, .45));
+    }
 
-/* team column */
-.team-col{
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-}
-.team-col.away{align-items:center}
-.team-logo{
-  width:76px;height:76px;object-fit:contain;
-  filter:drop-shadow(0 6px 16px rgba(0,0,0,.7));
-  transition:transform .3s;
-}
-.match-card:hover .team-logo{transform:scale(1.06)}
-.team-name-main{
-  font-size:.9rem;font-weight:700;text-align:center;
-  color:#fff;line-height:1.2;
-}
-.team-elo{font-size:.68rem;color:var(--sub);font-weight:500}
-.team-badge{
-  font-size:.6rem;padding:2px 7px;border-radius:20px;font-weight:600;letter-spacing:.04em;
-}
-.badge-host{background:rgba(52,211,153,.12);color:#34D399;border:1px solid rgba(52,211,153,.25)}
-.badge-neutral{background:rgba(245,197,24,.1);color:var(--gold);border:1px solid rgba(245,197,24,.22)}
+    .hd-title h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      background: linear-gradient(120deg, #F5C518, #FF8C00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-/* centre odds panel */
-.odds-panel{
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  padding:0 20px;min-width:160px;
-}
-.odds-row{
-  display:flex;align-items:center;gap:8px;width:100%;
-}
-.odds-item{
-  display:flex;flex-direction:column;align-items:center;gap:2px;
-  flex:1;
-}
-.odds-label{font-size:.58rem;text-transform:uppercase;letter-spacing:.07em;color:var(--sub);font-weight:600}
-.odds-pct{font-size:1.25rem;font-weight:900;line-height:1}
-.odds-pct.home{color:var(--blue)}
-.odds-pct.draw{color:var(--sub)}
-.odds-pct.away{color:var(--red)}
-.odds-divider{width:1px;height:32px;background:var(--card-border);flex-shrink:0}
+    .hd-title p {
+      font-size: .68rem;
+      color: var(--sub);
+      margin-top: 3px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
 
-/* probability bar */
-.prob-bar{
-  width:100%;height:5px;border-radius:99px;overflow:hidden;
-  display:flex;background:rgba(255,255,255,.07);margin-top:2px;
-}
-.pb-home{background:var(--blue);transition:width .5s}
-.pb-draw{background:rgba(255,255,255,.3);transition:width .5s}
-.pb-away{background:var(--red);transition:width .5s}
+    /* ── DATE NAV ───────────────────────────────── */
+    .date-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
 
-/* elo diff chip */
-.elo-chip{
-  font-size:.64rem;font-weight:600;
-  padding:3px 10px;border-radius:99px;
-  background:rgba(128,203,196,.1);border:1px solid rgba(128,203,196,.2);
-  color:#80CBC4;letter-spacing:.02em;white-space:nowrap;
-}
+    .nav-btn {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background .18s, border-color .18s;
+    }
 
-/* ── CARD STATS ROW ─────────────────────────── */
-.card-stats{
-  display:flex;align-items:stretch;
-  border-bottom:1px solid var(--card-border);
-}
-.stat-pill{
-  flex:1;display:flex;flex-direction:column;align-items:center;
-  padding:12px 8px;gap:3px;
-  border-right:1px solid var(--card-border);
-  transition:background .18s;
-}
-.stat-pill:last-child{border-right:none}
-.stat-pill:hover{background:rgba(255,255,255,.03)}
-.sp-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);font-weight:600;text-align:center}
-.sp-val{font-size:1rem;font-weight:800;line-height:1}
-.sp-val.c-white{color:#fff}
-.sp-val.c-green{color:var(--green)}
-.sp-val.c-amber{color:var(--amber)}
-.sp-val.c-red{color:#FF4B4B}
-.sp-val.c-purple{color:#C084FC}
-.sp-val.c-teal{color:#2DD4BF}
+    .nav-btn:hover {
+      background: rgba(245, 197, 24, .15);
+      border-color: var(--gold)
+    }
 
-/* ── PLAYERS SECTION ────────────────────────── */
-.card-players{
-  display:grid;grid-template-columns:1fr 1fr;
-}
-.players-half{padding:14px 16px}
-.players-half:first-child{border-right:1px solid var(--card-border)}
-.ph-header{
-  display:flex;align-items:center;gap:8px;margin-bottom:10px;
-}
-.ph-logo{width:22px;height:22px;object-fit:contain;flex-shrink:0}
-.ph-title{font-size:.65rem;text-transform:uppercase;letter-spacing:.07em;color:var(--sub);font-weight:600}
-.player-row{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);gap:6px;
-}
-.player-row:last-child{border:none;padding-bottom:0}
-.pr-name{font-size:.78rem;font-weight:600;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.pr-pos{
-  font-size:.58rem;font-weight:700;padding:2px 5px;border-radius:4px;flex-shrink:0;
-  letter-spacing:.04em;
-}
-.pos-fw{background:rgba(248,113,113,.15);color:#F87171}
-.pos-mf{background:rgba(96,165,250,.15);color:#60A5FA}
-.pos-df{background:rgba(163,163,163,.15);color:#A3A3A3}
-.pos-gk{background:rgba(251,191,36,.15);color:#FBBF24}
-.pr-prob{
-  font-size:.8rem;font-weight:800;color:var(--green);flex-shrink:0;min-width:32px;text-align:right;
-}
+    #date-select {
+      background: rgba(5, 8, 16, .7);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 6px 12px;
+      font-family: 'Barlow', sans-serif;
+      font-size: .88rem;
+      cursor: pointer;
+      outline: none;
+      transition: border-color .18s;
+    }
 
-/* ── NO MATCHES ─────────────────────────────── */
-#no-matches{
-  text-align:center;padding:100px 20px;color:var(--sub);
-}
-#no-matches .nm-icon{font-size:3rem;margin-bottom:12px}
-#no-matches p{font-size:1rem}
+    #date-select:focus {
+      border-color: var(--gold)
+    }
 
-/* ── FOOTER ─────────────────────────────────── */
-footer{
-  text-align:center;padding:24px 20px;
-  color:var(--sub);font-size:.7rem;
-  border-top:1px solid var(--card-border);
-  margin-top:48px;letter-spacing:.03em;
-}
-footer b{color:var(--gold)}
+    option {
+      background: #0d1220
+    }
 
-/* ── ANIMATIONS ──────────────────────────────── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.match-card{animation:fadeUp .35s ease both}
-.match-card:nth-child(1){animation-delay:.04s}
-.match-card:nth-child(2){animation-delay:.09s}
-.match-card:nth-child(3){animation-delay:.14s}
-.match-card:nth-child(4){animation-delay:.19s}
-.match-card:nth-child(5){animation-delay:.24s}
-.match-card:nth-child(6){animation-delay:.29s}
+    /* ── PAGE BODY ──────────────────────────────── */
+    .page-body {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 20px 0
+    }
 
-/* ── RESPONSIVE ──────────────────────────────── */
-@media(max-width:640px){
-  header{padding:12px 16px}
-  .hd-left img{width:40px;height:40px}
-  .hd-title h1{font-size:1.05rem}
-  .page-body{padding:20px 12px 0}
-  .day-header .day-full{font-size:1.3rem}
-  .card-top{padding:18px 12px 14px;gap:0}
-  .team-logo{width:56px;height:56px}
-  .team-name-main{font-size:.78rem}
-  .odds-panel{padding:0 10px;min-width:120px}
-  .odds-pct{font-size:1.05rem}
-  .elo-chip{display:none}
-  .card-stats{flex-wrap:wrap}
-  .stat-pill{min-width:50%;border-right:none;border-bottom:1px solid var(--card-border)}
-  .stat-pill:nth-child(odd){border-right:1px solid var(--card-border)}
-  .stat-pill:last-child:nth-child(odd){border-right:none}
-  .card-players{grid-template-columns:1fr}
-  .players-half:first-child{border-right:none;border-bottom:1px solid var(--card-border)}
-  .players-half{padding:12px}
-  .pr-name{font-size:.75rem}
-}
-</style>
+    /* ── DATE HEADING ───────────────────────────── */
+    .day-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .day-header .day-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--sub);
+      font-weight: 600;
+    }
+
+    .day-header .day-full {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      background: linear-gradient(120deg, rgba(255, 255, 255, .95) 40%, rgba(136, 146, 164, .7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 2px;
+    }
+
+    /* ── MATCH CARD ─────────────────────────────── */
+    #matches {
+      display: flex;
+      flex-direction: column;
+      gap: 20px
+    }
+
+    .match-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      overflow: hidden;
+      backdrop-filter: blur(28px) saturate(1.4);
+      -webkit-backdrop-filter: blur(28px) saturate(1.4);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .08);
+      transition: transform .22s, box-shadow .22s, border-color .22s;
+    }
+
+    .match-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 56px rgba(0, 0, 0, .65), inset 0 1px 0 rgba(255, 255, 255, .12);
+      border-color: rgba(255, 255, 255, .20);
+    }
+
+    /* ─────────────────────────────────────────────
+   CARD TOP — HERO MATCHUP
+   logo | VS centre | logo  (side-by-side, centred)
+──────────────────────────────────────────────── */
+    .card-top {
+      position: relative;
+      padding: 32px 28px 24px;
+      border-bottom: 1px solid var(--card-border);
+      /* subtle pitch-centre radial */
+      background:
+        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(52, 211, 153, .04) 0%, transparent 65%),
+        linear-gradient(160deg, rgba(0, 60, 25, .25) 0%, rgba(10, 18, 40, .15) 100%);
+    }
+
+    /* two-column: team left | team right */
+    .teams-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    /* each team */
+    .team-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    /* big flag/crest */
+    .team-logo {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, .75));
+      transition: transform .3s;
+    }
+
+    .match-card:hover .team-logo {
+      transform: scale(1.07)
+    }
+
+    .team-name-main {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: rgba(255, 255, 255, .90);
+      line-height: 1.1;
+    }
+
+    .team-elo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .72rem;
+      color: rgba(136, 146, 164, .75);
+      font-weight: 600;
+      letter-spacing: .06em;
+    }
+
+    .team-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .62rem;
+      padding: 2px 9px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .badge-host {
+      background: rgba(52, 211, 153, .10);
+      color: #34D399;
+      border: 1px solid rgba(52, 211, 153, .22)
+    }
+
+    .badge-neutral {
+      background: rgba(245, 197, 24, .08);
+      color: var(--gold);
+      border: 1px solid rgba(245, 197, 24, .20)
+    }
+
+    /* VS divider centre */
+    .vs-divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 0 24px;
+      flex-shrink: 0;
+    }
+
+    .vs-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .12);
+      line-height: 1;
+    }
+
+    .vs-date-chip {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .62rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(136, 146, 164, .6);
+      font-weight: 600;
+    }
+
+    /* ── ODDS RIBBON (below teams) ──────────────── */
+    .odds-ribbon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-top: 20px;
+      background: rgba(0, 0, 0, .20);
+      border: 1px solid rgba(255, 255, 255, .07);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .odds-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding: 10px 12px;
+      border-right: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .odds-item:last-child {
+      border-right: none
+    }
+
+    .odds-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .58rem;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      color: rgba(136, 146, 164, .65);
+      font-weight: 700;
+    }
+
+    .odds-pct {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: .02em;
+    }
+
+    .odds-pct.home {
+      color: var(--blue)
+    }
+
+    .odds-pct.draw {
+      color: rgba(200, 210, 230, .55)
+    }
+
+    .odds-pct.away {
+      color: var(--red)
+    }
+
+    /* probability bar */
+    .prob-bar {
+      width: 100%;
+      height: 4px;
+      display: flex;
+      background: rgba(255, 255, 255, .06);
+      margin-top: 10px;
+      border-radius: 0 0 14px 14px;
+      overflow: hidden;
+    }
+
+    .pb-home {
+      background: var(--blue);
+      transition: width .5s
+    }
+
+    .pb-draw {
+      background: rgba(200, 210, 230, .35);
+      transition: width .5s
+    }
+
+    .pb-away {
+      background: var(--red);
+      transition: width .5s
+    }
+
+    /* elo chip */
+    .elo-chip {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: rgba(128, 203, 196, .08);
+      border: 1px solid rgba(128, 203, 196, .18);
+      color: rgba(128, 203, 196, .75);
+      white-space: nowrap;
+      margin-top: 8px;
+      align-self: center;
+      display: inline-block;
+    }
+
+    /* ── FACTS SECTION ──────────────────────────── */
+    .card-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .fact-pill {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 14px 10px;
+      gap: 4px;
+      border-right: 1px solid rgba(255, 255, 255, .06);
+      background: rgba(0, 0, 0, .10);
+      transition: background .18s;
+    }
+
+    .fact-pill:last-child {
+      border-right: none
+    }
+
+    .fact-pill:hover {
+      background: rgba(255, 255, 255, .04)
+    }
+
+    .fp-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .6rem;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      color: rgba(136, 146, 164, .65);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .fp-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: .02em;
+    }
+
+    .fp-val.c-white {
+      color: rgba(255, 255, 255, .85)
+    }
+
+    .fp-val.c-green {
+      color: var(--green)
+    }
+
+    .fp-val.c-amber {
+      color: var(--amber)
+    }
+
+    .fp-val.c-red {
+      color: #FF4B4B
+    }
+
+    .fp-val.c-purple {
+      color: #C084FC
+    }
+
+    .fp-val.c-teal {
+      color: #2DD4BF
+    }
+
+    .fp-val.c-blue {
+      color: var(--blue)
+    }
+
+    /* ── SCORELINE SECTION ──────────────────────── */
+    .card-scorelines {
+      padding: 14px 20px 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .sl-header {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .6rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(136, 146, 164, .6);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .sl-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .sl-chip {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: 12px;
+      padding: 7px 14px;
+      transition: background .15s, border-color .15s;
+      cursor: default;
+    }
+
+    .sl-chip:hover {
+      background: rgba(255, 255, 255, .09);
+      border-color: rgba(255, 255, 255, .18)
+    }
+
+    .sl-score {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, .85);
+      letter-spacing: .08em;
+    }
+
+    .sl-prob {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .58rem;
+      font-weight: 600;
+      color: rgba(136, 146, 164, .65);
+      letter-spacing: .05em;
+    }
+
+    /* ── PLAYERS SECTION ────────────────────────── */
+    .card-players {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .players-half {
+      padding: 14px 18px
+    }
+
+    .players-half:first-child {
+      border-right: 1px solid var(--card-border)
+    }
+
+    .ph-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .ph-logo {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      flex-shrink: 0
+    }
+
+    .ph-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      color: rgba(136, 146, 164, .65);
+      font-weight: 700;
+    }
+
+    .player-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .04);
+      gap: 6px;
+    }
+
+    .player-row:last-child {
+      border: none;
+      padding-bottom: 0
+    }
+
+    .pr-name {
+      font-family: 'Barlow', sans-serif;
+      font-size: .78rem;
+      font-weight: 600;
+      color: rgba(238, 240, 245, .85);
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .pr-pos {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .58rem;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      letter-spacing: .05em;
+    }
+
+    .pos-fw {
+      background: rgba(248, 113, 113, .12);
+      color: #F87171
+    }
+
+    .pos-mf {
+      background: rgba(96, 165, 250, .12);
+      color: #60A5FA
+    }
+
+    .pos-df {
+      background: rgba(163, 163, 163, .12);
+      color: #A3A3A3
+    }
+
+    .pos-gk {
+      background: rgba(251, 191, 36, .12);
+      color: #FBBF24
+    }
+
+    .pr-prob {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem;
+      font-weight: 800;
+      color: var(--green);
+      flex-shrink: 0;
+      min-width: 32px;
+      text-align: right;
+      letter-spacing: .02em;
+    }
+
+    /* ── NO MATCHES ─────────────────────────────── */
+    #no-matches {
+      text-align: center;
+      padding: 100px 20px;
+      color: var(--sub);
+    }
+
+    #no-matches .nm-icon {
+      font-size: 3rem;
+      margin-bottom: 12px
+    }
+
+    #no-matches p {
+      font-size: 1rem
+    }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      color: rgba(136, 146, 164, .5);
+      font-size: .68rem;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      margin-top: 48px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    footer b {
+      color: rgba(245, 197, 24, .75)
+    }
+
+    /* ── ANIMATIONS ──────────────────────────────── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .match-card {
+      animation: fadeUp .4s ease both
+    }
+
+    .match-card:nth-child(1) {
+      animation-delay: .04s
+    }
+
+    .match-card:nth-child(2) {
+      animation-delay: .10s
+    }
+
+    .match-card:nth-child(3) {
+      animation-delay: .16s
+    }
+
+    .match-card:nth-child(4) {
+      animation-delay: .22s
+    }
+
+    .match-card:nth-child(5) {
+      animation-delay: .28s
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+    @media(max-width:640px) {
+      header {
+        padding: 12px 16px
+      }
+
+      .hd-left img {
+        width: 40px;
+        height: 40px
+      }
+
+      .hd-title h1 {
+        font-size: 1.2rem
+      }
+
+      .page-body {
+        padding: 20px 12px 0
+      }
+
+      .day-header .day-full {
+        font-size: 1.8rem
+      }
+
+      .card-top {
+        padding: 22px 16px 18px
+      }
+
+      .team-logo {
+        width: 64px;
+        height: 64px
+      }
+
+      .team-name-main {
+        font-size: 1rem
+      }
+
+      .vs-divider {
+        padding: 0 14px
+      }
+
+      .vs-label {
+        font-size: 1.4rem
+      }
+
+      .card-facts {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .fact-pill:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, .06)
+      }
+
+      .fact-pill:nth-child(even) {
+        border-right: none
+      }
+
+      .fact-pill:nth-child(1),
+      .fact-pill:nth-child(2) {
+        border-bottom: 1px solid rgba(255, 255, 255, .06)
+      }
+
+      .card-players {
+        grid-template-columns: 1fr
+      }
+
+      .players-half:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--card-border)
+      }
+
+      .elo-chip {
+        display: none
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div id="bg"></div>
-<div id="bg-overlay"></div>
-<div id="app">
+  <div id="bg"></div>
+  <div id="bg-overlay"></div>
+  <div id="app">
 
-<header>
-  <div class="hd-left">
-    <img src="https://assets.football-logos.cc/logos/fifa-world-cup/1500x1500/fifa-world-cup.png" alt="WC"
-         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2288%22>⚽</text></svg>'"/>
-    <div class="hd-title">
-      <h1>WC 2026 Predictions</h1>
-      <p>Dixon-Coles · Elo · Updated daily</p>
+    <header>
+      <div class="hd-left">
+        <img src="https://assets.football-logos.cc/logos/fifa-world-cup/1500x1500/fifa-world-cup.png" alt="WC"
+          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2288%22>⚽</text></svg>'" />
+        <div class="hd-title">
+          <h1>WC 2026 Predictions</h1>
+          <p>Dixon-Coles · Elo · Updated daily</p>
+        </div>
+      </div>
+      <div class="date-nav">
+        <button class="nav-btn" id="btn-prev">&#8592;</button>
+        <select id="date-select"></select>
+        <button class="nav-btn" id="btn-next">&#8594;</button>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <div class="day-header">
+        <div class="day-name" id="label-weekday">—</div>
+        <div class="day-full" id="label-date">—</div>
+      </div>
+
+      <div id="matches"></div>
+      <div id="no-matches" style="display:none">
+        <div class="nm-icon">⚽</div>
+        <p>No predictions available for this date.</p>
+      </div>
     </div>
-  </div>
-  <div class="date-nav">
-    <button class="nav-btn" id="btn-prev">&#8592;</button>
-    <select id="date-select"></select>
-    <button class="nav-btn" id="btn-next">&#8594;</button>
-  </div>
-</header>
 
-<div class="page-body">
-  <div class="day-header">
-    <div class="day-name" id="label-weekday">—</div>
-    <div class="day-full"  id="label-date">—</div>
+    <footer>
+      Powered by <b>Dixon-Coles + Elo</b> · Auto-updated via <b>GitHub Actions</b> · FIFA World Cup 2026
+    </footer>
   </div>
 
-  <div id="matches"></div>
-  <div id="no-matches" style="display:none">
-    <div class="nm-icon">⚽</div>
-    <p>No predictions available for this date.</p>
-  </div>
-</div>
+  <script src="data.js"></script>
+  <script>
+    // ── utils ──────────────────────────────────────────────────────
+    function pct(v) { return Math.round((v || 0) * 100) + '%' }
+    function fmt(v, d = 2) { return Number(v || 0).toFixed(d) }
 
-<footer>
-  Powered by <b>Dixon-Coles + Elo</b> · Auto-updated via <b>GitHub Actions</b> · FIFA World Cup 2026
-</footer>
-</div>
+    function getLogo(name) {
+      if (!name) return '';
+      if (LOGOS[name]) return LOGOS[name];
+      const n = name.toLowerCase();
+      for (const [k, v] of Object.entries(LOGOS)) {
+        const kl = k.toLowerCase();
+        if (kl === n || n.includes(kl) || kl.includes(n)) return v;
+      }
+      return '';
+    }
 
-<script src="data.js"></script>
-<script>
-// ── utils ──────────────────────────────────────────────────────
-function pct(v){ return Math.round((v||0)*100)+'%' }
-function fmt(v,d=2){ return Number(v||0).toFixed(d) }
+    function posClass(pos) {
+      if (!pos) return '';
+      const p = pos.toUpperCase();
+      if (p === 'FW' || p === 'ST' || p === 'CF' || p === 'LW' || p === 'RW') return 'pos-fw';
+      if (p === 'MF' || p === 'CM' || p === 'CAM' || p === 'CDM' || p === 'LM' || p === 'RM') return 'pos-mf';
+      if (p === 'DF' || p === 'CB' || p === 'LB' || p === 'RB' || p === 'WB') return 'pos-df';
+      if (p === 'GK') return 'pos-gk';
+      return 'pos-mf';
+    }
 
-function getLogo(name){
-  if(!name) return '';
-  if(LOGOS[name]) return LOGOS[name];
-  const n=name.toLowerCase();
-  for(const [k,v] of Object.entries(LOGOS)){
-    const kl=k.toLowerCase();
-    if(kl===n||n.includes(kl)||kl.includes(n)) return v;
-  }
-  return '';
-}
-
-function posClass(pos){
-  if(!pos) return '';
-  const p=pos.toUpperCase();
-  if(p==='FW'||p==='ST'||p==='CF'||p==='LW'||p==='RW') return 'pos-fw';
-  if(p==='MF'||p==='CM'||p==='CAM'||p==='CDM'||p==='LM'||p==='RM') return 'pos-mf';
-  if(p==='DF'||p==='CB'||p==='LB'||p==='RB'||p==='WB') return 'pos-df';
-  if(p==='GK') return 'pos-gk';
-  return 'pos-mf';
-}
-
-function statColor(label,val){
-  const v=parseFloat(val);
-  if(label==='xG H'||label==='xG A') return 'c-white';
-  if(label.includes('Over')||label.includes('BTTS')){
-    if(v>=55) return 'c-green';
-    if(v>=40) return 'c-amber';
-    return 'c-red';
-  }
-  if(label.includes('Card')||label.includes('Corner')) return 'c-purple';
-  return 'c-teal';
-}
-
-// ── players half ────────────────────────────────────────────────
-function buildPlayersHalf(label,list,logoUrl){
-  if(!list||!list.length) return '';
-  const players=list.filter(p=>p.goal_prob>0).slice(0,4);
-  if(!players.length) return '';
-  const logoImg=logoUrl
-    ?`<img class="ph-logo" src="${logoUrl}" alt="" onerror="this.style.display='none'"/>`
-    :'';
-  const rows=players.map(p=>`
+    // ── players half ─────────────────────────────────────────────────
+    function buildPlayersHalf(label, list, logoUrl) {
+      if (!list || !list.length) return '';
+      const players = list.filter(p => p.goal_prob > 0).slice(0, 4);
+      if (!players.length) return '';
+      const logoImg = logoUrl
+        ? `<img class="ph-logo" src="${logoUrl}" alt="" onerror="this.style.display='none'"/>`
+        : '';
+      const rows = players.map(p => `
     <div class="player-row">
       <span class="pr-name">${p.player}</span>
       <span class="pr-pos ${posClass(p.position)}">${p.position}</span>
       <span class="pr-prob">${pct(p.goal_prob)}</span>
     </div>`).join('');
-  return `<div class="players-half">
+      return `<div class="players-half">
     <div class="ph-header">${logoImg}<span class="ph-title">${label}</span></div>
     ${rows}
   </div>`;
-}
+    }
 
-// ── build card ─────────────────────────────────────────────────
-function buildCard(d){
-  const m=d.match, o=d.match_outcome||{}, g=d.goals||{}, e=d.elo||{};
-  const hLogo=getLogo(m.home_team), aLogo=getLogo(m.away_team);
+    // ── build card ─────────────────────────────────────────────────
+    function buildCard(d) {
+      const m = d.match, o = d.match_outcome || {}, g = d.goals || {}, e = d.elo || {};
+      const hLogo = getLogo(m.home_team), aLogo = getLogo(m.away_team);
 
-  const imgTag=(url,alt)=>url
-    ?`<img class="team-logo" src="${url}" alt="${alt}" onerror="this.style.display='none'"/>`
-    :`<div class="team-logo" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem">⚽</div>`;
+      const imgTag = (url, alt) => url
+        ? `<img class="team-logo" src="${url}" alt="${alt}" onerror="this.style.display='none'"/>`
+        : `<div class="team-logo" style="display:flex;align-items:center;justify-content:center;font-size:2.4rem">⚽</div>`;
 
-  // venue badge
-  const badge=m.host_advantage
-    ?`<span class="team-badge badge-host">Host</span>`
-    :m.neutral_venue
-    ?`<span class="team-badge badge-neutral">Neutral</span>`:'';
+      // venue badge
+      const homeBadge = m.host_advantage
+        ? `<span class="team-badge badge-host">Host</span>` : '';
+      const neutralBadge = m.neutral_venue
+        ? `<span class="team-badge badge-neutral">Neutral</span>` : '';
 
-  // elo chip
-  const eloDiff=e.elo_diff||0;
-  const eloChip=e.home_elo?`<div class="elo-chip">
-    Elo ${fmt(e.home_elo,0)} · Δ${eloDiff>0?'+':''}${fmt(eloDiff,0)} · ${fmt(e.away_elo,0)}
-  </div>`:'';
+      // elo chip
+      const eloDiff = e.elo_diff || 0;
+      const eloChip = e.home_elo ? `<div class="elo-chip">
+    Elo ${fmt(e.home_elo, 0)} · Δ${eloDiff > 0 ? '+' : ''}${fmt(eloDiff, 0)} · ${fmt(e.away_elo, 0)}
+  </div>`: '';
 
-  // stat pills
-  const stats=[
-    {label:'xG H',   val:fmt(g.expected_home_goals)},
-    {label:'xG A',   val:fmt(g.expected_away_goals)},
-    {label:'Over 2.5',val:pct(g.over_2_5)},
-    {label:'BTTS',   val:pct(g.btts)},
-  ];
-  if(d.cards?.expected_total!=null)
-    stats.push({label:'Cards',val:d.cards.expected_total});
-  if(d.corners?.expected_total!=null)
-    stats.push({label:'Corners',val:d.corners.expected_total});
+      // fact pills — xG + market stats from JSON
+      const overPct = Math.round((g.over_2_5 || 0) * 100);
+      const bttsPct = Math.round((g.btts || 0) * 100);
+      const facts = [
+        { label: 'xG Home', val: fmt(g.expected_home_goals), cls: 'c-blue' },
+        { label: 'xG Away', val: fmt(g.expected_away_goals), cls: 'c-red' },
+        { label: 'Over 2.5', val: overPct + '%', cls: overPct >= 55 ? 'c-green' : overPct >= 40 ? 'c-amber' : 'c-red' },
+        { label: 'BTTS', val: bttsPct + '%', cls: bttsPct >= 50 ? 'c-green' : bttsPct >= 38 ? 'c-amber' : 'c-red' },
+      ];
+      if (d.cards?.expected_total != null)
+        facts.push({ label: 'Cards', val: fmt(d.cards.expected_total, 1), cls: 'c-purple' });
+      if (d.corners?.expected_total != null)
+        facts.push({ label: 'Corners', val: fmt(d.corners.expected_total, 1), cls: 'c-teal' });
 
-  const pillsHtml=stats.map(s=>{
-    const rawNum=parseFloat(s.val);
-    return `<div class="stat-pill">
-      <span class="sp-label">${s.label}</span>
-      <span class="sp-val ${statColor(s.label,rawNum)}">${s.val}</span>
+      const factsHtml = facts.map(f => `
+    <div class="fact-pill">
+      <span class="fp-label">${f.label}</span>
+      <span class="fp-val ${f.cls}">${f.val}</span>
+    </div>`).join('');
+
+      // top scorelines
+      let scoresHtml = '';
+      if (d.top_scorelines && d.top_scorelines.length) {
+        const chips = d.top_scorelines.slice(0, 5).map(([h, a, p]) => `
+      <div class="sl-chip">
+        <span class="sl-score">${h} – ${a}</span>
+        <span class="sl-prob">${Math.round(p * 100)}%</span>
+      </div>`).join('');
+        scoresHtml = `<div class="card-scorelines">
+      <div class="sl-header">Top Scorelines</div>
+      <div class="sl-row">${chips}</div>
     </div>`;
-  }).join('');
+      }
 
-  // players
-  const ps=d.players_to_score||{};
-  const homeHalf=buildPlayersHalf('Home Scorers',ps.home,hLogo);
-  const awayHalf=buildPlayersHalf('Away Scorers',ps.away,aLogo);
-  const playersSection=(homeHalf||awayHalf)
-    ?`<div class="card-players">${homeHalf}${awayHalf}</div>`:'';
+      // players
+      const ps = d.players_to_score || {};
+      const homeHalf = buildPlayersHalf('Home Scorers', ps.home, hLogo);
+      const awayHalf = buildPlayersHalf('Away Scorers', ps.away, aLogo);
+      const playersSection = (homeHalf || awayHalf)
+        ? `<div class="card-players">${homeHalf}${awayHalf}</div>` : '';
 
-  return `<div class="match-card">
-  <!-- teams + odds -->
+      return `<div class="match-card">
+  <!-- ── HERO MATCHUP ── -->
   <div class="card-top">
-    <div class="team-col">
-      ${imgTag(hLogo,m.home_team)}
-      <div class="team-name-main">${m.home_team}</div>
-      ${e.home_elo?`<div class="team-elo">${fmt(e.home_elo,0)}</div>`:''}
-      ${m.host_advantage?badge:''}
+    <div class="teams-row">
+      <!-- HOME -->
+      <div class="team-col">
+        ${imgTag(hLogo, m.home_team)}
+        <div class="team-name-main">${m.home_team}</div>
+        ${e.home_elo ? `<div class="team-elo">ELO ${fmt(e.home_elo, 0)}</div>` : ''}
+        ${homeBadge}
+      </div>
+
+      <!-- VS -->
+      <div class="vs-divider">
+        <span class="vs-label">VS</span>
+        ${neutralBadge}
+        <span class="vs-date-chip">${m.date || ''}</span>
+      </div>
+
+      <!-- AWAY -->
+      <div class="team-col">
+        ${imgTag(aLogo, m.away_team)}
+        <div class="team-name-main">${m.away_team}</div>
+        ${e.away_elo ? `<div class="team-elo">ELO ${fmt(e.away_elo, 0)}</div>` : ''}
+      </div>
     </div>
 
-    <div class="odds-panel">
-      ${m.neutral_venue?badge:''}
-      <div class="odds-row">
-        <div class="odds-item">
-          <span class="odds-label">Home</span>
-          <span class="odds-pct home">${pct(o.home_win)}</span>
-        </div>
-        <div class="odds-divider"></div>
-        <div class="odds-item">
-          <span class="odds-label">Draw</span>
-          <span class="odds-pct draw">${pct(o.draw)}</span>
-        </div>
-        <div class="odds-divider"></div>
-        <div class="odds-item">
-          <span class="odds-label">Away</span>
-          <span class="odds-pct away">${pct(o.away_win)}</span>
-        </div>
+    <!-- ODDS RIBBON -->
+    <div class="odds-ribbon">
+      <div class="odds-item">
+        <span class="odds-label">Home Win</span>
+        <span class="odds-pct home">${pct(o.home_win)}</span>
       </div>
-      <div class="prob-bar">
-        <div class="pb-home" style="width:${pct(o.home_win)}"></div>
-        <div class="pb-draw" style="width:${pct(o.draw)}"></div>
-        <div class="pb-away" style="width:${pct(o.away_win)}"></div>
+      <div class="odds-item">
+        <span class="odds-label">Draw</span>
+        <span class="odds-pct draw">${pct(o.draw)}</span>
       </div>
-      ${eloChip}
+      <div class="odds-item">
+        <span class="odds-label">Away Win</span>
+        <span class="odds-pct away">${pct(o.away_win)}</span>
+      </div>
     </div>
-
-    <div class="team-col away">
-      ${imgTag(aLogo,m.away_team)}
-      <div class="team-name-main">${m.away_team}</div>
-      ${e.away_elo?`<div class="team-elo">${fmt(e.away_elo,0)}</div>`:''}
+    <div class="prob-bar">
+      <div class="pb-home" style="width:${pct(o.home_win)}"></div>
+      <div class="pb-draw" style="width:${pct(o.draw)}"></div>
+      <div class="pb-away" style="width:${pct(o.away_win)}"></div>
     </div>
+    ${eloChip}
   </div>
 
-  <!-- stat pills -->
-  <div class="card-stats">${pillsHtml}</div>
+  <!-- FACTS PILLS -->
+  <div class="card-facts">${factsHtml}</div>
 
-  <!-- players to score -->
+  <!-- TOP SCORELINES -->
+  ${scoresHtml}
+
+  <!-- PLAYERS TO SCORE -->
   ${playersSection}
 </div>`;
-}
+    }
 
-// ── date nav ────────────────────────────────────────────────────
-const dates=Object.keys(PREDICTIONS).sort();
-let idx=0;
-const today=new Date().toISOString().slice(0,10);
-const ti=dates.indexOf(today);
-if(ti>=0) idx=ti;
-else if(dates.length){
-  const li=dates.findLastIndex(d=>d<=today);
-  idx=li>=0?li:0;
-}
+    // ── date nav ────────────────────────────────────────────────────
+    const dates = Object.keys(PREDICTIONS).sort();
+    let idx = 0;
+    const today = new Date().toISOString().slice(0, 10);
+    const ti = dates.indexOf(today);
+    if (ti >= 0) idx = ti;
+    else if (dates.length) {
+      const li = dates.findLastIndex(d => d <= today);
+      idx = li >= 0 ? li : 0;
+    }
 
-const sel=document.getElementById('date-select');
-dates.forEach(d=>{
-  const o=document.createElement('option');
-  o.value=d;
-  o.textContent=new Date(d+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-  sel.appendChild(o);
-});
+    const sel = document.getElementById('date-select');
+    dates.forEach(d => {
+      const o = document.createElement('option');
+      o.value = d;
+      o.textContent = new Date(d + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+      sel.appendChild(o);
+    });
 
-function render(i){
-  idx=Math.max(0,Math.min(dates.length-1,i));
-  const d=dates[idx];
-  sel.value=d;
-  const dt=new Date(d+'T12:00:00');
-  document.getElementById('label-weekday').textContent=
-    dt.toLocaleDateString('en-US',{weekday:'long'});
-  document.getElementById('label-date').textContent=
-    dt.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+    function render(i) {
+      idx = Math.max(0, Math.min(dates.length - 1, i));
+      const d = dates[idx];
+      sel.value = d;
+      const dt = new Date(d + 'T12:00:00');
+      document.getElementById('label-weekday').textContent =
+        dt.toLocaleDateString('en-US', { weekday: 'long' });
+      document.getElementById('label-date').textContent =
+        dt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
-  const list=PREDICTIONS[d]||[];
-  const box=document.getElementById('matches');
-  const none=document.getElementById('no-matches');
-  if(!list.length){box.innerHTML='';none.style.display='';return;}
-  none.style.display='none';
-  box.innerHTML=list.map(buildCard).join('');
-}
+      const list = PREDICTIONS[d] || [];
+      const box = document.getElementById('matches');
+      const none = document.getElementById('no-matches');
+      if (!list.length) { box.innerHTML = ''; none.style.display = ''; return; }
+      none.style.display = 'none';
+      box.innerHTML = list.map(buildCard).join('');
+    }
 
-sel.addEventListener('change',()=>render(dates.indexOf(sel.value)));
-document.getElementById('btn-prev').addEventListener('click',()=>render(idx-1));
-document.getElementById('btn-next').addEventListener('click',()=>render(idx+1));
-render(idx);
-</script>
+    sel.addEventListener('change', () => render(dates.indexOf(sel.value)));
+    document.getElementById('btn-prev').addEventListener('click', () => render(idx - 1));
+    document.getElementById('btn-next').addEventListener('click', () => render(idx + 1));
+    render(idx);
+  </script>
 </body>
+
 </html>

@@ -11,7 +11,7 @@ PUBLIC.mkdir(exist_ok=True)
 (PUBLIC / ".nojekyll").touch()
 
 # Copy background image
-shutil.copy(ROOT / "data" / "background.png", PUBLIC / "background.png")
+shutil.copy(ROOT / "data" / "fifa-world-cup.png", PUBLIC / "background.png")
 
 # Load logos
 logos = json.loads((ROOT / "data" / "logos.json").read_text())
