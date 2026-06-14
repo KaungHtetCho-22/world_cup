@@ -29,9 +29,9 @@
       --green: #34D399;
       --amber: #FBBF24;
       /* Glassmorphism surfaces — very transparent */
-      --card-bg: rgba(8, 12, 28, 0.15);
-      --card-bg2: rgba(0, 0, 0, 0.12);
-      --card-border: rgba(255, 255, 255, 0.08);
+      --card-bg: transparent;
+      --card-bg2: transparent;
+      --card-border: rgba(255, 255, 255, 0.15);
       --surface: rgba(255, 255, 255, 0.06);
       --text: rgba(238, 240, 245, 0.92);
       --text-strong: #fff;
@@ -85,9 +85,9 @@
       padding: 14px 32px;
       gap: 16px;
       flex-wrap: wrap;
-      background: rgba(5, 8, 16, .25);
-      border-bottom: 1px solid rgba(255, 255, 255, .05);
-      backdrop-filter: blur(12px);
+      background: transparent;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: none;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -223,16 +223,16 @@
       border: 1px solid var(--card-border);
       border-radius: 24px;
       overflow: hidden;
-      backdrop-filter: blur(8px) saturate(1.2);
-      -webkit-backdrop-filter: blur(8px) saturate(1.2);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, .4), inset 0 1px 0 rgba(255, 255, 255, .06);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      box-shadow: none;
       transition: transform .22s, box-shadow .22s, border-color .22s;
     }
 
     .match-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 56px rgba(0, 0, 0, .65), inset 0 1px 0 rgba(255, 255, 255, .12);
-      border-color: rgba(255, 255, 255, .20);
+      box-shadow: 0 16px 56px rgba(0, 0, 0, .4);
+      border-color: rgba(255, 255, 255, .30);
     }
 
     /* ─────────────────────────────────────────────
@@ -243,10 +243,7 @@
       position: relative;
       padding: 32px 28px 24px;
       border-bottom: 1px solid var(--card-border);
-      /* subtle pitch-centre radial */
-      background:
-        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(52, 211, 153, .02) 0%, transparent 65%),
-        linear-gradient(160deg, rgba(0, 60, 25, .15) 0%, rgba(10, 18, 40, .05) 100%);
+      background: transparent;
     }
 
     /* two-column: team left | team right */
@@ -286,8 +283,9 @@
       text-align: center;
       text-transform: uppercase;
       letter-spacing: .06em;
-      color: rgba(255, 255, 255, .90);
+      color: #fff;
       line-height: 1.1;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.6);
     }
 
     .team-elo {
@@ -336,8 +334,9 @@
       font-weight: 900;
       letter-spacing: .05em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .5);
       line-height: 1;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 
     .vs-date-chip {
@@ -356,8 +355,8 @@
       justify-content: center;
       gap: 0;
       margin-top: 20px;
-      background: rgba(0, 0, 0, .10);
-      border: 1px solid rgba(255, 255, 255, .07);
+      background: transparent;
+      border: 1px solid var(--card-border);
       border-radius: 14px;
       overflow: hidden;
     }
@@ -391,6 +390,7 @@
       font-weight: 900;
       line-height: 1;
       letter-spacing: .02em;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
     }
 
     .odds-pct.home {
@@ -464,7 +464,7 @@
       padding: 14px 10px;
       gap: 4px;
       border-right: 1px solid rgba(255, 255, 255, .06);
-      background: rgba(0, 0, 0, .05);
+      background: transparent;
       transition: background .18s;
     }
 
@@ -492,6 +492,7 @@
       font-weight: 900;
       line-height: 1;
       letter-spacing: .02em;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
     }
 
     .fp-val.c-white {
