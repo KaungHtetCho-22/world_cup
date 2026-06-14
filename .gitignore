@@ -1,10 +1,63 @@
-# Python-generated files
+# ── Python ───────────────────────────────────────────────────────
 __pycache__/
-*.py[oc]
-build/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
 dist/
+build/
 wheels/
-*.egg-info
+*.whl
+MANIFEST
 
-# Virtual environments
-.venv
+# ── Virtual environments ─────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── uv ──────────────────────────────────────────────────────────
+# Keep uv.lock committed (reproducible installs)
+# .python-version is intentionally tracked
+
+# ── Jupyter ──────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── ML model artifacts ───────────────────────────────────────────
+# Uncomment if models are too large for git:
+# outputs/models/*.pkl
+# outputs/models/*.joblib
+
+# ── Data – raw downloads (re-fetchable) ─────────────────────────
+# Keep processed data and predictions committed
+# Uncomment if raw CSVs are large:
+# data/raw/*.csv
+
+# ── OS & editors ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── Environment & secrets ────────────────────────────────────────
+.env
+.env.*
+secrets.yaml
+
+# ── Coverage & testing ───────────────────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Logs & temp ──────────────────────────────────────────────────
+*.log
+tmp/
+temp/
