@@ -13,15 +13,15 @@
       "elo_diff": -38.5
     },
     "match_outcome": {
-      "home_win": 0.3108,
+      "home_win": 0.3109,
       "draw": 0.2882,
-      "away_win": 0.401
+      "away_win": 0.4009
     },
     "goals": {
       "expected_home_goals": 1.048,
-      "expected_away_goals": 1.238,
-      "over_2_5": 0.4001,
-      "under_2_5": 0.5999,
+      "expected_away_goals": 1.237,
+      "over_2_5": 0.4,
+      "under_2_5": 0.6,
       "btts": 0.4689
     },
     "top_scorelines": [
@@ -38,7 +38,7 @@
       [
         0,
         0,
-        0.1097
+        0.1098
       ],
       [
         1,
@@ -66,7 +66,7 @@
       "elo_diff": -128.8
     },
     "match_outcome": {
-      "home_win": 0.2131,
+      "home_win": 0.2132,
       "draw": 0.2901,
       "away_win": 0.4968
     },
@@ -75,7 +75,7 @@
       "expected_away_goals": 1.217,
       "over_2_5": 0.2935,
       "under_2_5": 0.7065,
-      "btts": 0.3521
+      "btts": 0.3522
     },
     "top_scorelines": [
       [
@@ -119,15 +119,15 @@
       "elo_diff": 278.0
     },
     "match_outcome": {
-      "home_win": 0.5302,
+      "home_win": 0.53,
       "draw": 0.2603,
-      "away_win": 0.2096
+      "away_win": 0.2097
     },
     "goals": {
       "expected_home_goals": 1.331,
       "expected_away_goals": 0.882,
-      "over_2_5": 0.3808,
-      "under_2_5": 0.6192,
+      "over_2_5": 0.3807,
+      "under_2_5": 0.6193,
       "btts": 0.439
     },
     "top_scorelines": [
@@ -144,12 +144,12 @@
       [
         0,
         0,
-        0.1171
+        0.1172
       ],
       [
         2,
         0,
-        0.0969
+        0.0968
       ],
       [
         0,
@@ -172,13 +172,13 @@
       "elo_diff": 53.3
     },
     "match_outcome": {
-      "home_win": 0.4423,
+      "home_win": 0.4422,
       "draw": 0.2936,
-      "away_win": 0.2641
+      "away_win": 0.2642
     },
     "goals": {
       "expected_home_goals": 1.236,
-      "expected_away_goals": 0.834,
+      "expected_away_goals": 0.835,
       "over_2_5": 0.3425,
       "under_2_5": 0.6575,
       "btts": 0.4094
@@ -207,7 +207,7 @@
       [
         2,
         0,
-        0.0964
+        0.0963
       ]
     ]
   }
