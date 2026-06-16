@@ -13,16 +13,16 @@
       "elo_diff": 209.2
     },
     "match_outcome": {
-      "home_win": 0.4676,
+      "home_win": 0.4675,
       "draw": 0.2891,
-      "away_win": 0.2433
+      "away_win": 0.2434
     },
     "goals": {
       "expected_home_goals": 1.089,
       "expected_away_goals": 0.834,
       "over_2_5": 0.3026,
       "under_2_5": 0.6974,
-      "btts": 0.3834
+      "btts": 0.3835
     },
     "top_scorelines": [
       [
@@ -43,12 +43,12 @@
       [
         0,
         1,
-        0.1138
+        0.1139
       ],
       [
         2,
         0,
-        0.0867
+        0.0866
       ]
     ]
   },
@@ -66,15 +66,15 @@
       "elo_diff": 99.1
     },
     "match_outcome": {
-      "home_win": 0.4308,
+      "home_win": 0.4307,
       "draw": 0.304,
-      "away_win": 0.2652
+      "away_win": 0.2653
     },
     "goals": {
-      "expected_home_goals": 1.074,
-      "expected_away_goals": 0.801,
-      "over_2_5": 0.2895,
-      "under_2_5": 0.7105,
+      "expected_home_goals": 1.073,
+      "expected_away_goals": 0.802,
+      "over_2_5": 0.2896,
+      "under_2_5": 0.7104,
       "btts": 0.3709
     },
     "top_scorelines": [
@@ -86,12 +86,12 @@
       [
         1,
         0,
-        0.1567
+        0.1566
       ],
       [
         1,
         1,
-        0.1399
+        0.14
       ],
       [
         0,
@@ -101,7 +101,7 @@
       [
         2,
         0,
-        0.0884
+        0.0883
       ]
     ]
   },
@@ -173,7 +173,7 @@
     },
     "match_outcome": {
       "home_win": 0.3142,
-      "draw": 0.3051,
+      "draw": 0.305,
       "away_win": 0.3807
     },
     "goals": {
@@ -225,16 +225,16 @@
       "elo_diff": 103.2
     },
     "match_outcome": {
-      "home_win": 0.4339,
+      "home_win": 0.4338,
       "draw": 0.279,
-      "away_win": 0.2871
+      "away_win": 0.2872
     },
     "goals": {
-      "expected_home_goals": 1.264,
+      "expected_home_goals": 1.263,
       "expected_away_goals": 1.031,
-      "over_2_5": 0.4026,
-      "under_2_5": 0.5974,
-      "btts": 0.4695
+      "over_2_5": 0.4024,
+      "under_2_5": 0.5976,
+      "btts": 0.4694
     },
     "top_scorelines": [
       [
@@ -255,7 +255,7 @@
       [
         0,
         1,
-        0.0959
+        0.096
       ],
       [
         2,
