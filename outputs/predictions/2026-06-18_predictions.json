@@ -13,13 +13,13 @@
       "elo_diff": 209.2
     },
     "match_outcome": {
-      "home_win": 0.4675,
-      "draw": 0.2891,
-      "away_win": 0.2434
+      "home_win": 0.4674,
+      "draw": 0.2892,
+      "away_win": 0.2435
     },
     "goals": {
       "expected_home_goals": 1.089,
-      "expected_away_goals": 0.834,
+      "expected_away_goals": 0.835,
       "over_2_5": 0.3026,
       "under_2_5": 0.6974,
       "btts": 0.3835
@@ -33,7 +33,7 @@
       [
         1,
         0,
-        0.1511
+        0.151
       ],
       [
         1,
@@ -66,7 +66,7 @@
       "elo_diff": 99.1
     },
     "match_outcome": {
-      "home_win": 0.4307,
+      "home_win": 0.4306,
       "draw": 0.304,
       "away_win": 0.2653
     },
@@ -75,18 +75,18 @@
       "expected_away_goals": 0.802,
       "over_2_5": 0.2896,
       "under_2_5": 0.7104,
-      "btts": 0.3709
+      "btts": 0.371
     },
     "top_scorelines": [
       [
         0,
         0,
-        0.1614
+        0.1613
       ],
       [
         1,
         0,
-        0.1566
+        0.1565
       ],
       [
         1,
@@ -179,15 +179,15 @@
     "goals": {
       "expected_home_goals": 0.949,
       "expected_away_goals": 0.926,
-      "over_2_5": 0.2895,
-      "under_2_5": 0.7105,
-      "btts": 0.3782
+      "over_2_5": 0.2896,
+      "under_2_5": 0.7104,
+      "btts": 0.3783
     },
     "top_scorelines": [
       [
         0,
         0,
-        0.1616
+        0.1615
       ],
       [
         1,
@@ -225,16 +225,16 @@
       "elo_diff": 103.2
     },
     "match_outcome": {
-      "home_win": 0.4338,
-      "draw": 0.279,
-      "away_win": 0.2872
+      "home_win": 0.4337,
+      "draw": 0.2791,
+      "away_win": 0.2873
     },
     "goals": {
       "expected_home_goals": 1.263,
       "expected_away_goals": 1.031,
-      "over_2_5": 0.4024,
-      "under_2_5": 0.5976,
-      "btts": 0.4694
+      "over_2_5": 0.4023,
+      "under_2_5": 0.5977,
+      "btts": 0.4693
     },
     "top_scorelines": [
       [
@@ -245,12 +245,12 @@
       [
         1,
         0,
-        0.1194
+        0.1195
       ],
       [
         0,
         0,
-        0.1088
+        0.1089
       ],
       [
         0,
@@ -260,7 +260,7 @@
       [
         2,
         1,
-        0.083
+        0.0829
       ]
     ]
   }
