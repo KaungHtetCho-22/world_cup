@@ -13,12 +13,12 @@
       "elo_diff": 212.0
     },
     "match_outcome": {
-      "home_win": 0.4825,
+      "home_win": 0.4824,
       "draw": 0.2772,
-      "away_win": 0.2403
+      "away_win": 0.2404
     },
     "goals": {
-      "expected_home_goals": 1.199,
+      "expected_home_goals": 1.198,
       "expected_away_goals": 0.889,
       "over_2_5": 0.3471,
       "under_2_5": 0.6529,
@@ -28,7 +28,7 @@
       [
         1,
         0,
-        0.1406
+        0.1405
       ],
       [
         1,
@@ -38,7 +38,7 @@
       [
         0,
         0,
-        0.1319
+        0.132
       ],
       [
         0,
@@ -48,7 +48,7 @@
       [
         2,
         0,
-        0.0891
+        0.089
       ]
     ]
   },
@@ -66,27 +66,27 @@
       "elo_diff": 200.6
     },
     "match_outcome": {
-      "home_win": 0.5127,
-      "draw": 0.2531,
-      "away_win": 0.2342
+      "home_win": 0.5126,
+      "draw": 0.2532,
+      "away_win": 0.2343
     },
     "goals": {
-      "expected_home_goals": 1.487,
+      "expected_home_goals": 1.486,
       "expected_away_goals": 1.021,
-      "over_2_5": 0.4583,
-      "under_2_5": 0.5417,
+      "over_2_5": 0.4582,
+      "under_2_5": 0.5418,
       "btts": 0.5027
     },
     "top_scorelines": [
       [
         1,
         1,
-        0.1311
+        0.1312
       ],
       [
         1,
         0,
-        0.1135
+        0.1136
       ],
       [
         2,
@@ -101,7 +101,7 @@
       [
         0,
         0,
-        0.0889
+        0.089
       ]
     ]
   },
@@ -121,14 +121,14 @@
     "match_outcome": {
       "home_win": 0.4157,
       "draw": 0.2964,
-      "away_win": 0.2879
+      "away_win": 0.288
     },
     "goals": {
       "expected_home_goals": 1.207,
       "expected_away_goals": 0.908,
-      "over_2_5": 0.3544,
-      "under_2_5": 0.6456,
-      "btts": 0.4262
+      "over_2_5": 0.3545,
+      "under_2_5": 0.6455,
+      "btts": 0.4263
     },
     "top_scorelines": [
       [
@@ -144,7 +144,7 @@
       [
         0,
         0,
-        0.1287
+        0.1286
       ],
       [
         0,

@@ -13,9 +13,9 @@
       "elo_diff": -38.5
     },
     "match_outcome": {
-      "home_win": 0.3112,
+      "home_win": 0.3113,
       "draw": 0.2882,
-      "away_win": 0.4006
+      "away_win": 0.4005
     },
     "goals": {
       "expected_home_goals": 1.049,
@@ -43,12 +43,12 @@
       [
         1,
         0,
-        0.0987
+        0.0988
       ],
       [
         1,
         2,
-        0.0816
+        0.0815
       ]
     ]
   },
@@ -66,16 +66,16 @@
       "elo_diff": -128.8
     },
     "match_outcome": {
-      "home_win": 0.2133,
+      "home_win": 0.2134,
       "draw": 0.2901,
-      "away_win": 0.4966
+      "away_win": 0.4965
     },
     "goals": {
       "expected_home_goals": 0.673,
       "expected_away_goals": 1.217,
       "over_2_5": 0.2936,
       "under_2_5": 0.7064,
-      "btts": 0.3523
+      "btts": 0.3524
     },
     "top_scorelines": [
       [
@@ -119,22 +119,22 @@
       "elo_diff": 278.0
     },
     "match_outcome": {
-      "home_win": 0.5296,
-      "draw": 0.2604,
-      "away_win": 0.21
+      "home_win": 0.5294,
+      "draw": 0.2605,
+      "away_win": 0.2101
     },
     "goals": {
-      "expected_home_goals": 1.329,
+      "expected_home_goals": 1.328,
       "expected_away_goals": 0.883,
-      "over_2_5": 0.3804,
-      "under_2_5": 0.6196,
-      "btts": 0.4389
+      "over_2_5": 0.3803,
+      "under_2_5": 0.6197,
+      "btts": 0.4388
     },
     "top_scorelines": [
       [
         1,
         0,
-        0.1378
+        0.1377
       ],
       [
         1,
@@ -144,7 +144,7 @@
       [
         0,
         0,
-        0.1173
+        0.1174
       ],
       [
         2,
@@ -174,13 +174,13 @@
     "match_outcome": {
       "home_win": 0.4419,
       "draw": 0.2937,
-      "away_win": 0.2644
+      "away_win": 0.2645
     },
     "goals": {
       "expected_home_goals": 1.235,
       "expected_away_goals": 0.835,
-      "over_2_5": 0.3424,
-      "under_2_5": 0.6576,
+      "over_2_5": 0.3423,
+      "under_2_5": 0.6577,
       "btts": 0.4095
     },
     "top_scorelines": [
@@ -202,12 +202,12 @@
       [
         0,
         1,
-        0.0974
+        0.0975
       ],
       [
         2,
         0,
-        0.0963
+        0.0962
       ]
     ]
   }
