@@ -20,15 +20,15 @@
     "goals": {
       "expected_home_goals": 0.927,
       "expected_away_goals": 0.965,
-      "over_2_5": 0.2939,
-      "under_2_5": 0.7061,
-      "btts": 0.382
+      "over_2_5": 0.294,
+      "under_2_5": 0.706,
+      "btts": 0.3821
     },
     "top_scorelines": [
       [
         0,
         0,
-        0.1591
+        0.159
       ],
       [
         1,
@@ -66,22 +66,22 @@
       "elo_diff": 272.3
     },
     "match_outcome": {
-      "home_win": 0.5129,
+      "home_win": 0.5128,
       "draw": 0.2807,
-      "away_win": 0.2064
+      "away_win": 0.2065
     },
     "goals": {
       "expected_home_goals": 1.148,
-      "expected_away_goals": 0.757,
+      "expected_away_goals": 0.758,
       "over_2_5": 0.2977,
       "under_2_5": 0.7023,
-      "btts": 0.3704
+      "btts": 0.3705
     },
     "top_scorelines": [
       [
         1,
         0,
-        0.163
+        0.1629
       ],
       [
         0,
@@ -96,12 +96,12 @@
       [
         0,
         1,
-        0.1048
+        0.1049
       ],
       [
         2,
         0,
-        0.0981
+        0.098
       ]
     ]
   },
@@ -124,10 +124,10 @@
       "away_win": 0.3406
     },
     "goals": {
-      "expected_home_goals": 1.073,
+      "expected_home_goals": 1.072,
       "expected_away_goals": 1.104,
-      "over_2_5": 0.3711,
-      "under_2_5": 0.6289,
+      "over_2_5": 0.371,
+      "under_2_5": 0.629,
       "btts": 0.448
     },
     "top_scorelines": [
@@ -139,12 +139,12 @@
       [
         0,
         0,
-        0.1215
+        0.1216
       ],
       [
         0,
         1,
-        0.117
+        0.1171
       ],
       [
         1,
@@ -179,8 +179,8 @@
     "goals": {
       "expected_home_goals": 1.031,
       "expected_away_goals": 1.082,
-      "over_2_5": 0.3541,
-      "under_2_5": 0.6459,
+      "over_2_5": 0.354,
+      "under_2_5": 0.646,
       "btts": 0.4336
     },
     "top_scorelines": [
@@ -197,7 +197,7 @@
       [
         0,
         1,
-        0.1225
+        0.1226
       ],
       [
         1,
