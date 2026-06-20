@@ -13,13 +13,13 @@
       "elo_diff": 294.6
     },
     "match_outcome": {
-      "home_win": 0.5333,
+      "home_win": 0.5332,
       "draw": 0.2677,
-      "away_win": 0.199
+      "away_win": 0.1991
     },
     "goals": {
       "expected_home_goals": 1.251,
-      "expected_away_goals": 0.798,
+      "expected_away_goals": 0.799,
       "over_2_5": 0.3368,
       "under_2_5": 0.6632,
       "btts": 0.4004
@@ -66,22 +66,22 @@
       "elo_diff": -222.4
     },
     "match_outcome": {
-      "home_win": 0.176,
-      "draw": 0.2676,
-      "away_win": 0.5564
+      "home_win": 0.1761,
+      "draw": 0.2677,
+      "away_win": 0.5562
     },
     "goals": {
       "expected_home_goals": 0.657,
-      "expected_away_goals": 1.336,
-      "over_2_5": 0.3213,
-      "under_2_5": 0.6787,
-      "btts": 0.3621
+      "expected_away_goals": 1.335,
+      "over_2_5": 0.3212,
+      "under_2_5": 0.6788,
+      "btts": 0.3623
     },
     "top_scorelines": [
       [
         0,
         1,
-        0.1749
+        0.1748
       ],
       [
         0,
@@ -96,12 +96,12 @@
       [
         0,
         2,
-        0.1216
+        0.1215
       ],
       [
         1,
         0,
-        0.0823
+        0.0824
       ]
     ]
   },
@@ -119,16 +119,16 @@
       "elo_diff": -11.8
     },
     "match_outcome": {
-      "home_win": 0.2763,
-      "draw": 0.2838,
-      "away_win": 0.4399
+      "home_win": 0.2764,
+      "draw": 0.2839,
+      "away_win": 0.4397
     },
     "goals": {
       "expected_home_goals": 0.934,
-      "expected_away_goals": 1.393,
-      "over_2_5": 0.4111,
-      "under_2_5": 0.5889,
-      "btts": 0.4641
+      "expected_away_goals": 1.392,
+      "over_2_5": 0.4109,
+      "under_2_5": 0.5891,
+      "btts": 0.464
     },
     "top_scorelines": [
       [
@@ -144,7 +144,7 @@
       [
         0,
         0,
-        0.1053
+        0.1054
       ],
       [
         0,
@@ -172,22 +172,22 @@
       "elo_diff": -79.6
     },
     "match_outcome": {
-      "home_win": 0.3246,
-      "draw": 0.3343,
+      "home_win": 0.3247,
+      "draw": 0.3342,
       "away_win": 0.3411
     },
     "goals": {
       "expected_home_goals": 0.828,
       "expected_away_goals": 0.742,
-      "over_2_5": 0.2088,
-      "under_2_5": 0.7912,
-      "btts": 0.3026
+      "over_2_5": 0.209,
+      "under_2_5": 0.791,
+      "btts": 0.3028
     },
     "top_scorelines": [
       [
         0,
         0,
-        0.2159
+        0.2158
       ],
       [
         1,
@@ -197,7 +197,7 @@
       [
         0,
         1,
-        0.1467
+        0.1466
       ],
       [
         1,
@@ -227,7 +227,7 @@
     "match_outcome": {
       "home_win": 0.3373,
       "draw": 0.309,
-      "away_win": 0.3538
+      "away_win": 0.3537
     },
     "goals": {
       "expected_home_goals": 0.985,
@@ -255,12 +255,12 @@
       [
         1,
         0,
-        0.1218
+        0.1219
       ],
       [
         0,
         2,
-        0.0714
+        0.0713
       ]
     ]
   },
@@ -278,16 +278,16 @@
       "elo_diff": -303.6
     },
     "match_outcome": {
-      "home_win": 0.2612,
+      "home_win": 0.2613,
       "draw": 0.2796,
-      "away_win": 0.4592
+      "away_win": 0.4591
     },
     "goals": {
       "expected_home_goals": 0.957,
       "expected_away_goals": 1.018,
       "over_2_5": 0.3165,
       "under_2_5": 0.6835,
-      "btts": 0.4015
+      "btts": 0.4016
     },
     "top_scorelines": [
       [

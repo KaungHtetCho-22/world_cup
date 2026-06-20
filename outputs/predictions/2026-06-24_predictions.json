@@ -13,9 +13,9 @@
       "elo_diff": 129.5
     },
     "match_outcome": {
-      "home_win": 0.4594,
+      "home_win": 0.4593,
       "draw": 0.2954,
-      "away_win": 0.2453
+      "away_win": 0.2454
     },
     "goals": {
       "expected_home_goals": 1.136,
@@ -28,7 +28,7 @@
       [
         1,
         0,
-        0.159
+        0.1589
       ],
       [
         0,
@@ -43,7 +43,7 @@
       [
         0,
         1,
-        0.1069
+        0.107
       ],
       [
         2,
@@ -66,16 +66,16 @@
       "elo_diff": 393.7
     },
     "match_outcome": {
-      "home_win": 0.6021,
+      "home_win": 0.6019,
       "draw": 0.2543,
-      "away_win": 0.1436
+      "away_win": 0.1437
     },
     "goals": {
-      "expected_home_goals": 1.326,
+      "expected_home_goals": 1.325,
       "expected_away_goals": 0.633,
       "over_2_5": 0.3121,
       "under_2_5": 0.6879,
-      "btts": 0.3515
+      "btts": 0.3517
     },
     "top_scorelines": [
       [
@@ -91,12 +91,12 @@
       [
         1,
         1,
-        0.1255
+        0.1256
       ],
       [
         2,
         0,
-        0.124
+        0.1239
       ],
       [
         0,
@@ -119,22 +119,22 @@
       "elo_diff": -123.4
     },
     "match_outcome": {
-      "home_win": 0.2419,
+      "home_win": 0.242,
       "draw": 0.2831,
-      "away_win": 0.475
+      "away_win": 0.4748
     },
     "goals": {
       "expected_home_goals": 0.829,
-      "expected_away_goals": 1.261,
-      "over_2_5": 0.3475,
-      "under_2_5": 0.6525,
-      "btts": 0.4115
+      "expected_away_goals": 1.26,
+      "over_2_5": 0.3474,
+      "under_2_5": 0.6526,
+      "btts": 0.4116
     },
     "top_scorelines": [
       [
         0,
         1,
-        0.1482
+        0.1481
       ],
       [
         1,
@@ -154,7 +154,7 @@
       [
         1,
         0,
-        0.0947
+        0.0948
       ]
     ]
   },
@@ -179,8 +179,8 @@
     "goals": {
       "expected_home_goals": 0.887,
       "expected_away_goals": 1.015,
-      "over_2_5": 0.2966,
-      "under_2_5": 0.7034,
+      "over_2_5": 0.2967,
+      "under_2_5": 0.7033,
       "btts": 0.383
     },
     "top_scorelines": [
