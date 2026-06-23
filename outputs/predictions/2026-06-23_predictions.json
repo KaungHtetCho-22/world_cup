@@ -14,21 +14,21 @@
     },
     "match_outcome": {
       "home_win": 0.4171,
-      "draw": 0.2921,
+      "draw": 0.292,
       "away_win": 0.2909
     },
     "goals": {
       "expected_home_goals": 0.927,
       "expected_away_goals": 0.965,
-      "over_2_5": 0.2941,
-      "under_2_5": 0.7059,
-      "btts": 0.3822
+      "over_2_5": 0.2942,
+      "under_2_5": 0.7058,
+      "btts": 0.3823
     },
     "top_scorelines": [
       [
         0,
         0,
-        0.159
+        0.1589
       ],
       [
         1,
@@ -66,12 +66,12 @@
       "elo_diff": 272.3
     },
     "match_outcome": {
-      "home_win": 0.5123,
+      "home_win": 0.5121,
       "draw": 0.2808,
-      "away_win": 0.2069
+      "away_win": 0.207
     },
     "goals": {
-      "expected_home_goals": 1.147,
+      "expected_home_goals": 1.146,
       "expected_away_goals": 0.759,
       "over_2_5": 0.2977,
       "under_2_5": 0.7023,
@@ -96,12 +96,12 @@
       [
         0,
         1,
-        0.105
+        0.1051
       ],
       [
         2,
         0,
-        0.0978
+        0.0977
       ]
     ]
   },
@@ -119,16 +119,16 @@
       "elo_diff": 58.3
     },
     "match_outcome": {
-      "home_win": 0.3664,
+      "home_win": 0.3663,
       "draw": 0.2929,
-      "away_win": 0.3407
+      "away_win": 0.3408
     },
     "goals": {
-      "expected_home_goals": 1.072,
+      "expected_home_goals": 1.071,
       "expected_away_goals": 1.104,
-      "over_2_5": 0.3708,
-      "under_2_5": 0.6292,
-      "btts": 0.4477
+      "over_2_5": 0.3707,
+      "under_2_5": 0.6293,
+      "btts": 0.4476
     },
     "top_scorelines": [
       [
@@ -173,15 +173,15 @@
     },
     "match_outcome": {
       "home_win": 0.3184,
-      "draw": 0.2938,
+      "draw": 0.2939,
       "away_win": 0.3878
     },
     "goals": {
       "expected_home_goals": 1.031,
       "expected_away_goals": 1.082,
-      "over_2_5": 0.3539,
-      "under_2_5": 0.6461,
-      "btts": 0.4335
+      "over_2_5": 0.3538,
+      "under_2_5": 0.6462,
+      "btts": 0.4334
     },
     "top_scorelines": [
       [
