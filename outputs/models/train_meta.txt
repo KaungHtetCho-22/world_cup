@@ -1,10 +1,10 @@
-trained_at: 2026-07-03
+trained_at: 2026-07-04
 n_matches_total: 49405
 cutoff_years: 8
 min_tournament_weight: 0.6
 half_life_days: 270
 shrinkage_prior: 15
-dc_fit_seconds: 229.4
+dc_fit_seconds: 224.3
 n_teams_dc: 265
 home_advantage: 0.2202
 rho: -0.0607
